@@ -12,7 +12,7 @@ exec(code, module.__dict__)
 
 def main():
     DATA_PATH= os.path.dirname(real_path) + '/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datasets' 
-    CAMERA_NUM = 0
+    CAMERA_NUM = 2
     SERIAL_PORT = "/dev/ttyACM0"
     MAX_STEERING = 7  # 사용자 정의 최대 조향 단계
 
@@ -20,7 +20,7 @@ def main():
 
     # 데이터 수집 객체 초기화
     data_collector = module.Data_Collect(path=DATA_PATH, cam_num=CAMERA_NUM, max_steering=MAX_STEERING)
-    ser = serial.Serial(SERIAL_PORT, 9600, timeout=1)
+    ser = serial.Serial(SERIAL_PORT, 115200, timeout=1)
     time.sleep(1)
     try:
         # 숨겨진 코드 프로세스 시작

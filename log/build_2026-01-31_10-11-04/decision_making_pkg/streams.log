@@ -1,0 +1,25 @@
+[0.583s] Invoking command in '/home/tu03/ros2_ws/build/decision_making_pkg': PYTHONPATH=/home/tu03/ros2_ws/build/decision_making_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tu03/ros2_ws/build/decision_making_pkg/build --no-deps symlink_data
+[0.820s] running develop
+[0.980s] running egg_info
+[0.980s] creating decision_making_pkg.egg-info
+[0.980s] writing decision_making_pkg.egg-info/PKG-INFO
+[0.980s] writing dependency_links to decision_making_pkg.egg-info/dependency_links.txt
+[0.980s] writing entry points to decision_making_pkg.egg-info/entry_points.txt
+[0.981s] writing requirements to decision_making_pkg.egg-info/requires.txt
+[0.981s] writing top-level names to decision_making_pkg.egg-info/top_level.txt
+[0.981s] writing manifest file 'decision_making_pkg.egg-info/SOURCES.txt'
+[0.983s] reading manifest file 'decision_making_pkg.egg-info/SOURCES.txt'
+[0.983s] writing manifest file 'decision_making_pkg.egg-info/SOURCES.txt'
+[0.984s] running build_ext
+[0.985s] Creating /home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision-making-pkg.egg-link (link to .)
+[0.986s] Installing motion_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg
+[0.986s] Installing path_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg
+[0.986s] 
+[0.986s] Installed /home/tu03/ros2_ws/build/decision_making_pkg
+[0.986s] running symlink_data
+[0.986s] creating /home/tu03/ros2_ws/install/decision_making_pkg/share/ament_index
+[0.986s] creating /home/tu03/ros2_ws/install/decision_making_pkg/share/ament_index/resource_index
+[0.986s] creating /home/tu03/ros2_ws/install/decision_making_pkg/share/ament_index/resource_index/packages
+[0.986s] symbolically linking /home/tu03/ros2_ws/build/decision_making_pkg/resource/decision_making_pkg -> /home/tu03/ros2_ws/install/decision_making_pkg/share/ament_index/resource_index/packages
+[0.987s] symbolically linking /home/tu03/ros2_ws/build/decision_making_pkg/package.xml -> /home/tu03/ros2_ws/install/decision_making_pkg/share/decision_making_pkg
+[1.017s] Invoked command in '/home/tu03/ros2_ws/build/decision_making_pkg' returned '0': PYTHONPATH=/home/tu03/ros2_ws/build/decision_making_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tu03/ros2_ws/build/decision_making_pkg/build --no-deps symlink_data

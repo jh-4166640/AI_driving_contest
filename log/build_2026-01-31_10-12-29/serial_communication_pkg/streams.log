@@ -1,0 +1,24 @@
+[0.540s] Invoking command in '/home/tu03/ros2_ws/build/serial_communication_pkg': PYTHONPATH=/home/tu03/ros2_ws/build/serial_communication_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tu03/ros2_ws/build/serial_communication_pkg/build --no-deps symlink_data
+[0.772s] running develop
+[0.916s] running egg_info
+[0.916s] creating serial_communication_pkg.egg-info
+[0.916s] writing serial_communication_pkg.egg-info/PKG-INFO
+[0.917s] writing dependency_links to serial_communication_pkg.egg-info/dependency_links.txt
+[0.917s] writing entry points to serial_communication_pkg.egg-info/entry_points.txt
+[0.917s] writing requirements to serial_communication_pkg.egg-info/requires.txt
+[0.917s] writing top-level names to serial_communication_pkg.egg-info/top_level.txt
+[0.917s] writing manifest file 'serial_communication_pkg.egg-info/SOURCES.txt'
+[0.918s] reading manifest file 'serial_communication_pkg.egg-info/SOURCES.txt'
+[0.919s] writing manifest file 'serial_communication_pkg.egg-info/SOURCES.txt'
+[0.921s] running build_ext
+[0.921s] Creating /home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages/serial-communication-pkg.egg-link (link to .)
+[0.922s] Installing serial_sender_node script to /home/tu03/ros2_ws/install/serial_communication_pkg/lib/serial_communication_pkg
+[0.922s] 
+[0.922s] Installed /home/tu03/ros2_ws/build/serial_communication_pkg
+[0.922s] running symlink_data
+[0.922s] creating /home/tu03/ros2_ws/install/serial_communication_pkg/share/ament_index
+[0.922s] creating /home/tu03/ros2_ws/install/serial_communication_pkg/share/ament_index/resource_index
+[0.922s] creating /home/tu03/ros2_ws/install/serial_communication_pkg/share/ament_index/resource_index/packages
+[0.923s] symbolically linking /home/tu03/ros2_ws/build/serial_communication_pkg/resource/serial_communication_pkg -> /home/tu03/ros2_ws/install/serial_communication_pkg/share/ament_index/resource_index/packages
+[0.923s] symbolically linking /home/tu03/ros2_ws/build/serial_communication_pkg/package.xml -> /home/tu03/ros2_ws/install/serial_communication_pkg/share/serial_communication_pkg
+[0.959s] Invoked command in '/home/tu03/ros2_ws/build/serial_communication_pkg' returned '0': PYTHONPATH=/home/tu03/ros2_ws/build/serial_communication_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tu03/ros2_ws/build/serial_communication_pkg/build --no-deps symlink_data

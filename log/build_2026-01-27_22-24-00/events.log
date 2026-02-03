@@ -1,0 +1,744 @@
+[0.000000] (-) TimerEvent: {}
+[0.000362] (-) JobUnselected: {'identifier': 'camera_perception_pkg'}
+[0.000460] (-) JobUnselected: {'identifier': 'debug_pkg'}
+[0.000504] (-) JobUnselected: {'identifier': 'decision_making_pkg'}
+[0.000568] (-) JobUnselected: {'identifier': 'launch_pkg'}
+[0.000584] (-) JobUnselected: {'identifier': 'lidar_perception_pkg'}
+[0.000599] (-) JobUnselected: {'identifier': 'serial_communication_pkg'}
+[0.000616] (interfaces_pkg) JobQueued: {'identifier': 'interfaces_pkg', 'dependencies': OrderedDict()}
+[0.000633] (interfaces_pkg) JobStarted: {'identifier': 'interfaces_pkg'}
+[0.005830] (interfaces_pkg) JobProgress: {'identifier': 'interfaces_pkg', 'progress': 'cmake'}
+[0.006209] (interfaces_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/tu03/ros2_ws/src/interfaces_pkg', '-DCMAKE_INSTALL_PREFIX=/home/tu03/ros2_ws/install/interfaces_pkg'], 'cwd': '/home/tu03/ros2_ws/build/interfaces_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'tu03'), ('LC_TIME', 'ko_KR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/tu03'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1753'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=136f634965447f5a9c82ce516978ac0e'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/tu03/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'tu03'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'tu03'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/tu03-Dell-G15-5520:@/tmp/.ICE-unix/1753,unix/tu03-Dell-G15-5520:/tmp/.ICE-unix/1753'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/87eb1367_0ace_4301_91f9_67865f689c15'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.WZXLJ3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.158'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/tu03/ros2_ws/install/camera_perception_pkg:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:d62fdc95-bd78-4691-937b-6fec0b8232fe'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/tu03/ros2_ws/build/interfaces_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=136f634965447f5a9c82ce516978ac0e'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/tu03/ros2_ws/build/camera_perception_pkg:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/tu03/ros2_ws/install/camera_perception_pkg:/opt/ros/humble')]), 'shell': False}
+[0.096786] (interfaces_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099734] (-) TimerEvent: {}
+[0.165733] (interfaces_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.173800] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199925] (-) TimerEvent: {}
+[0.224816] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.231053] (interfaces_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.232213] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.232485] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.235384] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.295418] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.300160] (-) TimerEvent: {}
+[0.301939] (interfaces_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.302161] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.302487] (interfaces_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.306004] (interfaces_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.400285] (-) TimerEvent: {}
+[0.434154] (interfaces_pkg) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.500412] (-) TimerEvent: {}
+[0.514304] (interfaces_pkg) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.517325] (interfaces_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.522876] (interfaces_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.559355] (interfaces_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.590364] (interfaces_pkg) StdoutLine: {'line': b'-- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)\n'}
+[0.600645] (-) TimerEvent: {}
+[0.615347] (interfaces_pkg) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.700773] (-) TimerEvent: {}
+[0.801026] (-) TimerEvent: {}
+[0.901363] (-) TimerEvent: {}
+[0.929569] (interfaces_pkg) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.001492] (-) TimerEvent: {}
+[1.101755] (-) TimerEvent: {}
+[1.148129] (interfaces_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.201970] (-) TimerEvent: {}
+[1.302206] (-) TimerEvent: {}
+[1.402550] (-) TimerEvent: {}
+[1.433980] (interfaces_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.453870] (interfaces_pkg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[1.455880] (interfaces_pkg) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.478015] (interfaces_pkg) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[1.478157] (interfaces_pkg) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.478217] (interfaces_pkg) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.478269] (interfaces_pkg) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.495582] (interfaces_pkg) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.502677] (-) TimerEvent: {}
+[1.555877] (interfaces_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.600954] (interfaces_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[1.602790] (-) TimerEvent: {}
+[1.611429] (interfaces_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/tu03/ros2_ws/build/interfaces_pkg\n'}
+[1.616051] (interfaces_pkg) CommandEnded: {'returncode': 0}
+[1.617601] (interfaces_pkg) JobProgress: {'identifier': 'interfaces_pkg', 'progress': 'build'}
+[1.617640] (interfaces_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tu03/ros2_ws/build/interfaces_pkg', '--', '-j20', '-l20'], 'cwd': '/home/tu03/ros2_ws/build/interfaces_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'tu03'), ('LC_TIME', 'ko_KR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/tu03'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1753'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=136f634965447f5a9c82ce516978ac0e'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/tu03/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'tu03'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'tu03'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/tu03-Dell-G15-5520:@/tmp/.ICE-unix/1753,unix/tu03-Dell-G15-5520:/tmp/.ICE-unix/1753'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/87eb1367_0ace_4301_91f9_67865f689c15'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.WZXLJ3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.158'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/tu03/ros2_ws/install/camera_perception_pkg:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:d62fdc95-bd78-4691-937b-6fec0b8232fe'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/tu03/ros2_ws/build/interfaces_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=136f634965447f5a9c82ce516978ac0e'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/tu03/ros2_ws/build/camera_perception_pkg:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/tu03/ros2_ws/install/camera_perception_pkg:/opt/ros/humble')]), 'shell': False}
+[1.650941] (interfaces_pkg) StdoutLine: {'line': b'[  0%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.658389] (interfaces_pkg) StdoutLine: {'line': b'[  0%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.663307] (interfaces_pkg) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_copy_interfaces_pkg\n'}
+[1.702884] (-) TimerEvent: {}
+[1.803097] (-) TimerEvent: {}
+[1.894456] (interfaces_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[1.894896] (interfaces_pkg) StdoutLine: {'line': b'creating interfaces_pkg.egg-info\n'}
+[1.895087] (interfaces_pkg) StdoutLine: {'line': b'writing interfaces_pkg.egg-info/PKG-INFO\n'}
+[1.895187] (interfaces_pkg) StdoutLine: {'line': b'writing dependency_links to interfaces_pkg.egg-info/dependency_links.txt\n'}
+[1.895350] (interfaces_pkg) StdoutLine: {'line': b'writing top-level names to interfaces_pkg.egg-info/top_level.txt\n'}
+[1.895445] (interfaces_pkg) StdoutLine: {'line': b"writing manifest file 'interfaces_pkg.egg-info/SOURCES.txt'\n"}
+[1.896925] (interfaces_pkg) StdoutLine: {'line': b"reading manifest file 'interfaces_pkg.egg-info/SOURCES.txt'\n"}
+[1.897480] (interfaces_pkg) StdoutLine: {'line': b"writing manifest file 'interfaces_pkg.egg-info/SOURCES.txt'\n"}
+[1.903204] (-) TimerEvent: {}
+[1.918337] (interfaces_pkg) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_build_interfaces_pkg_egg\n'}
+[2.003423] (-) TimerEvent: {}
+[2.103787] (-) TimerEvent: {}
+[2.204051] (-) TimerEvent: {}
+[2.304339] (-) TimerEvent: {}
+[2.350311] (interfaces_pkg) StdoutLine: {'line': b'[  0%] Built target interfaces_pkg__cpp\n'}
+[2.358382] (interfaces_pkg) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[2.358560] (interfaces_pkg) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.358641] (interfaces_pkg) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.404425] (-) TimerEvent: {}
+[2.504663] (-) TimerEvent: {}
+[2.604892] (-) TimerEvent: {}
+[2.705121] (-) TimerEvent: {}
+[2.772507] (interfaces_pkg) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/bounding_box2_d__functions.c.o\x1b[0m\n'}
+[2.772668] (interfaces_pkg) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/bounding_box3_d__functions.c.o\x1b[0m\n'}
+[2.772735] (interfaces_pkg) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/mask__functions.c.o\x1b[0m\n'}
+[2.772791] (interfaces_pkg) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/point2_d__functions.c.o\x1b[0m\n'}
+[2.772844] (interfaces_pkg) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/key_point2_d__functions.c.o\x1b[0m\n'}
+[2.772897] (interfaces_pkg) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/vector2__functions.c.o\x1b[0m\n'}
+[2.774836] (interfaces_pkg) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/pose2_d__functions.c.o\x1b[0m\n'}
+[2.774990] (interfaces_pkg) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/key_point3_d_array__functions.c.o\x1b[0m\n'}
+[2.775058] (interfaces_pkg) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/detection_array__functions.c.o\x1b[0m\n'}
+[2.775105] (interfaces_pkg) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/detection__functions.c.o\x1b[0m\n'}
+[2.775153] (interfaces_pkg) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/key_point2_d_array__functions.c.o\x1b[0m\n'}
+[2.775202] (interfaces_pkg) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/path_planning_result__functions.c.o\x1b[0m\n'}
+[2.775255] (interfaces_pkg) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/key_point3_d__functions.c.o\x1b[0m\n'}
+[2.775302] (interfaces_pkg) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/target_point__functions.c.o\x1b[0m\n'}
+[2.775680] (interfaces_pkg) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/lane_info__functions.c.o\x1b[0m\n'}
+[2.775856] (interfaces_pkg) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/motion_command__functions.c.o\x1b[0m\n'}
+[2.805215] (-) TimerEvent: {}
+[2.844765] (interfaces_pkg) StdoutLine: {'line': b'[ 14%] \x1b[32m\x1b[1mLinking C shared library libinterfaces_pkg__rosidl_generator_c.so\x1b[0m\n'}
+[2.873547] (interfaces_pkg) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/mask__type_support.cpp.o\x1b[0m\n'}
+[2.873713] (interfaces_pkg) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/pose2_d__type_support.cpp.o\x1b[0m\n'}
+[2.873785] (interfaces_pkg) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/bounding_box2_d__type_support.cpp.o\x1b[0m\n'}
+[2.873839] (interfaces_pkg) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/key_point2_d__type_support.cpp.o\x1b[0m\n'}
+[2.873889] (interfaces_pkg) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/key_point2_d_array__type_support.cpp.o\x1b[0m\n'}
+[2.873939] (interfaces_pkg) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/point2_d__type_support.cpp.o\x1b[0m\n'}
+[2.873988] (interfaces_pkg) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/vector2__type_support.cpp.o\x1b[0m\n'}
+[2.874087] (interfaces_pkg) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/key_point3_d_array__type_support.cpp.o\x1b[0m\n'}
+[2.874144] (interfaces_pkg) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/bounding_box3_d__type_support.cpp.o\x1b[0m\n'}
+[2.874212] (interfaces_pkg) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/detection__type_support.cpp.o\x1b[0m\n'}
+[2.874938] (interfaces_pkg) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/motion_command__type_support.cpp.o\x1b[0m\n'}
+[2.875080] (interfaces_pkg) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/target_point__type_support.cpp.o\x1b[0m\n'}
+[2.875147] (interfaces_pkg) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/lane_info__type_support.cpp.o\x1b[0m\n'}
+[2.875235] (interfaces_pkg) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/key_point3_d__type_support.cpp.o\x1b[0m\n'}
+[2.875293] (interfaces_pkg) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/path_planning_result__type_support.cpp.o\x1b[0m\n'}
+[2.875955] (interfaces_pkg) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/detection_array__type_support.cpp.o\x1b[0m\n'}
+[2.884648] (interfaces_pkg) StdoutLine: {'line': b'[ 25%] Built target interfaces_pkg__rosidl_generator_c\n'}
+[2.893736] (interfaces_pkg) StdoutLine: {'line': b'[ 26%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.895399] (interfaces_pkg) StdoutLine: {'line': b'[ 27%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.905304] (-) TimerEvent: {}
+[3.005980] (-) TimerEvent: {}
+[3.109552] (-) TimerEvent: {}
+[3.195031] (interfaces_pkg) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[3.209647] (-) TimerEvent: {}
+[3.221946] (interfaces_pkg) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/point2_d__type_support.cpp.o\x1b[0m\n'}
+[3.222121] (interfaces_pkg) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/pose2_d__type_support.cpp.o\x1b[0m\n'}
+[3.222207] (interfaces_pkg) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/vector2__type_support.cpp.o\x1b[0m\n'}
+[3.222269] (interfaces_pkg) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/bounding_box2_d__type_support.cpp.o\x1b[0m\n'}
+[3.222328] (interfaces_pkg) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/bounding_box3_d__type_support.cpp.o\x1b[0m\n'}
+[3.222912] (interfaces_pkg) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/mask__type_support.cpp.o\x1b[0m\n'}
+[3.223062] (interfaces_pkg) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/key_point2_d_array__type_support.cpp.o\x1b[0m\n'}
+[3.223202] (interfaces_pkg) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/key_point2_d__type_support.cpp.o\x1b[0m\n'}
+[3.223464] (interfaces_pkg) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/key_point3_d__type_support.cpp.o\x1b[0m\n'}
+[3.223879] (interfaces_pkg) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/key_point3_d_array__type_support.cpp.o\x1b[0m\n'}
+[3.232748] (interfaces_pkg) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/detection__type_support.cpp.o\x1b[0m\n'}
+[3.237262] (interfaces_pkg) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/motion_command__type_support.cpp.o\x1b[0m\n'}
+[3.237467] (interfaces_pkg) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/target_point__type_support.cpp.o\x1b[0m\n'}
+[3.237608] (interfaces_pkg) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/lane_info__type_support.cpp.o\x1b[0m\n'}
+[3.237716] (interfaces_pkg) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/detection_array__type_support.cpp.o\x1b[0m\n'}
+[3.250452] (interfaces_pkg) StdoutLine: {'line': b'[ 38%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[3.309762] (-) TimerEvent: {}
+[3.320527] (interfaces_pkg) StdoutLine: {'line': b'[ 38%] Built target interfaces_pkg__rosidl_typesupport_cpp\n'}
+[3.332299] (interfaces_pkg) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/path_planning_result__type_support.cpp.o\x1b[0m\n'}
+[3.409868] (-) TimerEvent: {}
+[3.512826] (-) TimerEvent: {}
+[3.613159] (-) TimerEvent: {}
+[3.713518] (-) TimerEvent: {}
+[3.727562] (interfaces_pkg) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/vector2__type_support.cpp.o\x1b[0m\n'}
+[3.727831] (interfaces_pkg) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/key_point2_d__type_support.cpp.o\x1b[0m\n'}
+[3.727983] (interfaces_pkg) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/point2_d__type_support.cpp.o\x1b[0m\n'}
+[3.728073] (interfaces_pkg) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/pose2_d__type_support.cpp.o\x1b[0m\n'}
+[3.728137] (interfaces_pkg) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/bounding_box2_d__type_support.cpp.o\x1b[0m\n'}
+[3.728200] (interfaces_pkg) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/bounding_box3_d__type_support.cpp.o\x1b[0m\n'}
+[3.730148] (interfaces_pkg) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/key_point3_d_array__type_support.cpp.o\x1b[0m\n'}
+[3.730376] (interfaces_pkg) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/key_point2_d_array__type_support.cpp.o\x1b[0m\n'}
+[3.730508] (interfaces_pkg) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/mask__type_support.cpp.o\x1b[0m\n'}
+[3.732655] (interfaces_pkg) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/key_point3_d__type_support.cpp.o\x1b[0m\n'}
+[3.733052] (interfaces_pkg) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/detection__type_support.cpp.o\x1b[0m\n'}
+[3.753691] (interfaces_pkg) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/detection_array__type_support.cpp.o\x1b[0m\n'}
+[3.758473] (interfaces_pkg) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/lane_info__type_support.cpp.o\x1b[0m\n'}
+[3.803346] (interfaces_pkg) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/target_point__type_support.cpp.o\x1b[0m\n'}
+[3.803628] (interfaces_pkg) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/motion_command__type_support.cpp.o\x1b[0m\n'}
+[3.813610] (-) TimerEvent: {}
+[3.907124] (interfaces_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/path_planning_result__type_support.cpp.o\x1b[0m\n'}
+[3.913711] (-) TimerEvent: {}
+[4.016758] (-) TimerEvent: {}
+[4.053847] (interfaces_pkg) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[4.116861] (-) TimerEvent: {}
+[4.180470] (interfaces_pkg) StdoutLine: {'line': b'[ 51%] Built target interfaces_pkg__rosidl_typesupport_introspection_cpp\n'}
+[4.216961] (-) TimerEvent: {}
+[4.255053] (interfaces_pkg) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/point2_d__type_support.c.o\x1b[0m\n'}
+[4.255615] (interfaces_pkg) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/mask__type_support.c.o\x1b[0m\n'}
+[4.256018] (interfaces_pkg) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/vector2__type_support.c.o\x1b[0m\n'}
+[4.256400] (interfaces_pkg) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/bounding_box2_d__type_support.c.o\x1b[0m\n'}
+[4.256476] (interfaces_pkg) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/bounding_box3_d__type_support.c.o\x1b[0m\n'}
+[4.256578] (interfaces_pkg) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/key_point2_d_array__type_support.c.o\x1b[0m\n'}
+[4.256650] (interfaces_pkg) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/key_point3_d__type_support.c.o\x1b[0m\n'}
+[4.256707] (interfaces_pkg) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/key_point3_d_array__type_support.c.o\x1b[0m\n'}
+[4.257498] (interfaces_pkg) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/key_point2_d__type_support.c.o\x1b[0m\n'}
+[4.257669] (interfaces_pkg) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/pose2_d__type_support.c.o\x1b[0m\n'}
+[4.262337] (interfaces_pkg) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/detection__type_support.c.o\x1b[0m\n'}
+[4.289701] (interfaces_pkg) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/detection_array__type_support.c.o\x1b[0m\n'}
+[4.289962] (interfaces_pkg) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/lane_info__type_support.c.o\x1b[0m\n'}
+[4.295123] (interfaces_pkg) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/motion_command__type_support.c.o\x1b[0m\n'}
+[4.295827] (interfaces_pkg) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/target_point__type_support.c.o\x1b[0m\n'}
+[4.295994] (interfaces_pkg) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/path_planning_result__type_support.c.o\x1b[0m\n'}
+[4.319416] (-) TimerEvent: {}
+[4.322359] (interfaces_pkg) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/point2_d__type_support.cpp.o\x1b[0m\n'}
+[4.323839] (interfaces_pkg) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/vector2__type_support.cpp.o\x1b[0m\n'}
+[4.326880] (interfaces_pkg) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/bounding_box2_d__type_support.cpp.o\x1b[0m\n'}
+[4.327083] (interfaces_pkg) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/pose2_d__type_support.cpp.o\x1b[0m\n'}
+[4.327815] (interfaces_pkg) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/bounding_box3_d__type_support.cpp.o\x1b[0m\n'}
+[4.329368] (interfaces_pkg) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/mask__type_support.cpp.o\x1b[0m\n'}
+[4.332056] (interfaces_pkg) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/key_point2_d_array__type_support.cpp.o\x1b[0m\n'}
+[4.332377] (interfaces_pkg) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/key_point2_d__type_support.cpp.o\x1b[0m\n'}
+[4.334595] (interfaces_pkg) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/key_point3_d__type_support.cpp.o\x1b[0m\n'}
+[4.336039] (interfaces_pkg) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/key_point3_d_array__type_support.cpp.o\x1b[0m\n'}
+[4.343638] (interfaces_pkg) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking C shared library libinterfaces_pkg__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[4.346692] (interfaces_pkg) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/detection__type_support.cpp.o\x1b[0m\n'}
+[4.347524] (interfaces_pkg) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/detection_array__type_support.cpp.o\x1b[0m\n'}
+[4.350772] (interfaces_pkg) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/lane_info__type_support.cpp.o\x1b[0m\n'}
+[4.358771] (interfaces_pkg) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/path_planning_result__type_support.cpp.o\x1b[0m\n'}
+[4.358983] (interfaces_pkg) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/motion_command__type_support.cpp.o\x1b[0m\n'}
+[4.360950] (interfaces_pkg) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/target_point__type_support.cpp.o\x1b[0m\n'}
+[4.377660] (interfaces_pkg) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/pose2_d__type_support_c.cpp.o\x1b[0m\n'}
+[4.377944] (interfaces_pkg) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/point2_d__type_support_c.cpp.o\x1b[0m\n'}
+[4.378057] (interfaces_pkg) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/vector2__type_support_c.cpp.o\x1b[0m\n'}
+[4.378123] (interfaces_pkg) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/bounding_box2_d__type_support_c.cpp.o\x1b[0m\n'}
+[4.378181] (interfaces_pkg) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/bounding_box3_d__type_support_c.cpp.o\x1b[0m\n'}
+[4.378242] (interfaces_pkg) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/key_point2_d__type_support_c.cpp.o\x1b[0m\n'}
+[4.378301] (interfaces_pkg) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/mask__type_support_c.cpp.o\x1b[0m\n'}
+[4.378393] (interfaces_pkg) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/key_point3_d__type_support_c.cpp.o\x1b[0m\n'}
+[4.378437] (interfaces_pkg) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/detection__type_support_c.cpp.o\x1b[0m\n'}
+[4.378483] (interfaces_pkg) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/key_point3_d_array__type_support_c.cpp.o\x1b[0m\n'}
+[4.378530] (interfaces_pkg) StdoutLine: {'line': b'[ 78%] Built target interfaces_pkg__rosidl_typesupport_introspection_c\n'}
+[4.378568] (interfaces_pkg) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/key_point2_d_array__type_support_c.cpp.o\x1b[0m\n'}
+[4.379028] (interfaces_pkg) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/detection_array__type_support_c.cpp.o\x1b[0m\n'}
+[4.382342] (interfaces_pkg) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/lane_info__type_support_c.cpp.o\x1b[0m\n'}
+[4.388235] (interfaces_pkg) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/motion_command__type_support_c.cpp.o\x1b[0m\n'}
+[4.388488] (interfaces_pkg) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/path_planning_result__type_support_c.cpp.o\x1b[0m\n'}
+[4.388746] (interfaces_pkg) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/target_point__type_support_c.cpp.o\x1b[0m\n'}
+[4.394800] (interfaces_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_c.so\x1b[0m\n'}
+[4.419527] (-) TimerEvent: {}
+[4.448758] (interfaces_pkg) StdoutLine: {'line': b'[ 83%] Built target interfaces_pkg__rosidl_typesupport_c\n'}
+[4.507706] (interfaces_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[4.519641] (-) TimerEvent: {}
+[4.619977] (-) TimerEvent: {}
+[4.625583] (interfaces_pkg) StdoutLine: {'line': b'[ 83%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_cpp\n'}
+[4.720122] (-) TimerEvent: {}
+[4.795436] (interfaces_pkg) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[4.820229] (-) TimerEvent: {}
+[4.855231] (interfaces_pkg) StdoutLine: {'line': b'[ 84%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_c\n'}
+[4.869714] (interfaces_pkg) StdoutLine: {'line': b'[ 84%] Built target interfaces_pkg\n'}
+[4.884140] (interfaces_pkg) StdoutLine: {'line': b'[ 85%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[4.920303] (-) TimerEvent: {}
+[5.020579] (-) TimerEvent: {}
+[5.120769] (-) TimerEvent: {}
+[5.220934] (-) TimerEvent: {}
+[5.321141] (-) TimerEvent: {}
+[5.421339] (-) TimerEvent: {}
+[5.521540] (-) TimerEvent: {}
+[5.621706] (-) TimerEvent: {}
+[5.721895] (-) TimerEvent: {}
+[5.822073] (-) TimerEvent: {}
+[5.922240] (-) TimerEvent: {}
+[6.022444] (-) TimerEvent: {}
+[6.122633] (-) TimerEvent: {}
+[6.222786] (-) TimerEvent: {}
+[6.322963] (-) TimerEvent: {}
+[6.423155] (-) TimerEvent: {}
+[6.523474] (-) TimerEvent: {}
+[6.549379] (interfaces_pkg) StdoutLine: {'line': b'[ 85%] Built target interfaces_pkg__py\n'}
+[6.565082] (interfaces_pkg) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_bounding_box3_d_s.c.o\x1b[0m\n'}
+[6.565312] (interfaces_pkg) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_key_point3_d_array_s.c.o\x1b[0m\n'}
+[6.565407] (interfaces_pkg) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_mask_s.c.o\x1b[0m\n'}
+[6.565500] (interfaces_pkg) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_point2_d_s.c.o\x1b[0m\n'}
+[6.565624] (interfaces_pkg) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_key_point2_d_s.c.o\x1b[0m\n'}
+[6.565710] (interfaces_pkg) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_key_point3_d_s.c.o\x1b[0m\n'}
+[6.565780] (interfaces_pkg) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_vector2_s.c.o\x1b[0m\n'}
+[6.565850] (interfaces_pkg) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_pose2_d_s.c.o\x1b[0m\n'}
+[6.565913] (interfaces_pkg) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_bounding_box2_d_s.c.o\x1b[0m\n'}
+[6.565975] (interfaces_pkg) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_key_point2_d_array_s.c.o\x1b[0m\n'}
+[6.567538] (interfaces_pkg) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_motion_command_s.c.o\x1b[0m\n'}
+[6.567696] (interfaces_pkg) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_lane_info_s.c.o\x1b[0m\n'}
+[6.567783] (interfaces_pkg) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_target_point_s.c.o\x1b[0m\n'}
+[6.567856] (interfaces_pkg) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_path_planning_result_s.c.o\x1b[0m\n'}
+[6.567926] (interfaces_pkg) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_detection_s.c.o\x1b[0m\n'}
+[6.567996] (interfaces_pkg) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_detection_array_s.c.o\x1b[0m\n'}
+[6.623622] (-) TimerEvent: {}
+[6.691478] (interfaces_pkg) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces_pkg/libinterfaces_pkg__rosidl_generator_py.so\x1b[0m\n'}
+[6.723756] (-) TimerEvent: {}
+[6.726721] (interfaces_pkg) StdoutLine: {'line': b'[ 96%] Built target interfaces_pkg__rosidl_generator_py\n'}
+[6.741649] (interfaces_pkg) StdoutLine: {'line': b'[ 99%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[6.741811] (interfaces_pkg) StdoutLine: {'line': b'[ 99%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[6.741881] (interfaces_pkg) StdoutLine: {'line': b'[ 99%] \x1b[32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[6.823894] (-) TimerEvent: {}
+[6.834684] (interfaces_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.836545] (interfaces_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.855445] (interfaces_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.868133] (interfaces_pkg) StdoutLine: {'line': b'[100%] Built target interfaces_pkg__rosidl_typesupport_c__pyext\n'}
+[6.868250] (interfaces_pkg) StdoutLine: {'line': b'[100%] Built target interfaces_pkg__rosidl_typesupport_introspection_c__pyext\n'}
+[6.888035] (interfaces_pkg) StdoutLine: {'line': b'[100%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_c__pyext\n'}
+[6.897105] (interfaces_pkg) CommandEnded: {'returncode': 0}
+[6.897831] (interfaces_pkg) JobProgress: {'identifier': 'interfaces_pkg', 'progress': 'install'}
+[6.904077] (interfaces_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tu03/ros2_ws/build/interfaces_pkg'], 'cwd': '/home/tu03/ros2_ws/build/interfaces_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'tu03'), ('LC_TIME', 'ko_KR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/tu03'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1753'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=136f634965447f5a9c82ce516978ac0e'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/tu03/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'tu03'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'tu03'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/tu03-Dell-G15-5520:@/tmp/.ICE-unix/1753,unix/tu03-Dell-G15-5520:/tmp/.ICE-unix/1753'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/87eb1367_0ace_4301_91f9_67865f689c15'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.WZXLJ3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.158'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/tu03/ros2_ws/install/camera_perception_pkg:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:d62fdc95-bd78-4691-937b-6fec0b8232fe'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/tu03/ros2_ws/build/interfaces_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=136f634965447f5a9c82ce516978ac0e'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/tu03/ros2_ws/build/camera_perception_pkg:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/tu03/ros2_ws/install/camera_perception_pkg:/opt/ros/humble')]), 'shell': False}
+[6.909671] (interfaces_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.909866] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/rosidl_interfaces/interfaces_pkg\n'}
+[6.909957] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg\n'}
+[6.909988] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg\n'}
+[6.910012] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/vector2.h\n'}
+[6.910060] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/bounding_box3_d.h\n'}
+[6.910105] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point2_d_array.h\n'}
+[6.910130] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point3_d_array.h\n'}
+[6.910154] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/pose2_d.h\n'}
+[6.910189] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point2_d.h\n'}
+[6.910223] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail\n'}
+[6.910288] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__struct.h\n'}
+[6.910349] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__struct.h\n'}
+[6.910413] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__functions.c\n'}
+[6.910480] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__type_support.h\n'}
+[6.910547] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__functions.c\n'}
+[6.910617] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__functions.c\n'}
+[6.910685] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__functions.c\n'}
+[6.910761] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__type_support.h\n'}
+[6.910823] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__functions.c\n'}
+[6.910902] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__functions.c\n'}
+[6.910967] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__type_support.h\n'}
+[6.911029] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__type_support.h\n'}
+[6.911090] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__type_support.h\n'}
+[6.911152] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__type_support.h\n'}
+[6.911219] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__functions.c\n'}
+[6.911288] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__type_support.h\n'}
+[6.911350] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__struct.h\n'}
+[6.911412] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__functions.h\n'}
+[6.911478] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__functions.c\n'}
+[6.911551] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__type_support.h\n'}
+[6.911622] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__functions.c\n'}
+[6.911690] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__functions.h\n'}
+[6.911758] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__functions.h\n'}
+[6.911828] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__functions.h\n'}
+[6.911898] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__type_support.h\n'}
+[6.911961] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__functions.h\n'}
+[6.912028] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__functions.h\n'}
+[6.912095] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__functions.h\n'}
+[6.912161] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__struct.h\n'}
+[6.912224] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__struct.h\n'}
+[6.912289] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__struct.h\n'}
+[6.912352] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__functions.c\n'}
+[6.912418] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__functions.c\n'}
+[6.912485] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__type_support.h\n'}
+[6.912555] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__functions.c\n'}
+[6.912630] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__type_support.h\n'}
+[6.912702] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__functions.c\n'}
+[6.912771] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__functions.h\n'}
+[6.912838] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__type_support.h\n'}
+[6.912904] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__struct.h\n'}
+[6.912974] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__functions.c\n'}
+[6.913041] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__functions.h\n'}
+[6.913110] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__struct.h\n'}
+[6.913175] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__type_support.h\n'}
+[6.913241] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__type_support.h\n'}
+[6.913306] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__functions.h\n'}
+[6.913376] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__functions.c\n'}
+[6.913444] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__functions.h\n'}
+[6.913515] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__functions.h\n'}
+[6.913593] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__struct.h\n'}
+[6.913668] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__functions.h\n'}
+[6.913742] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__struct.h\n'}
+[6.913808] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__type_support.h\n'}
+[6.913880] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__functions.h\n'}
+[6.913952] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__struct.h\n'}
+[6.914019] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__type_support.h\n'}
+[6.914087] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__struct.h\n'}
+[6.914153] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__struct.h\n'}
+[6.914220] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__struct.h\n'}
+[6.914295] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__struct.h\n'}
+[6.914353] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__struct.h\n'}
+[6.914420] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__functions.h\n'}
+[6.914490] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__functions.c\n'}
+[6.914571] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__functions.h\n'}
+[6.914650] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/path_planning_result.h\n'}
+[6.914717] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point3_d.h\n'}
+[6.914777] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/point2_d.h\n'}
+[6.914845] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/mask.h\n'}
+[6.914897] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detection.h\n'}
+[6.914960] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_generator_c__visibility_control.h\n'}
+[6.915019] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/lane_info.h\n'}
+[6.915081] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/target_point.h\n'}
+[6.915150] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/bounding_box2_d.h\n'}
+[6.915203] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detection_array.h\n'}
+[6.915264] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/motion_command.h\n'}
+[6.915406] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/library_path.sh\n'}
+[6.915522] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/library_path.dsv\n'}
+[6.915656] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_c.so\n'}
+[6.915931] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_c.so" to ""\n'}
+[6.915976] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg\n'}
+[6.916008] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg\n'}
+[6.916041] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail\n'}
+[6.916075] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916132] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916202] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916273] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916342] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916414] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916483] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916558] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916633] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916703] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916776] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916847] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916916] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__rosidl_typesupport_fastrtps_c.h\n'}
+[6.916986] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__rosidl_typesupport_fastrtps_c.h\n'}
+[6.917059] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__rosidl_typesupport_fastrtps_c.h\n'}
+[6.917131] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__rosidl_typesupport_fastrtps_c.h\n'}
+[6.917204] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[6.917312] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so\n'}
+[6.917571] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[6.917610] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg\n'}
+[6.917645] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg\n'}
+[6.917680] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail\n'}
+[6.917710] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__rosidl_typesupport_introspection_c.h\n'}
+[6.917767] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__rosidl_typesupport_introspection_c.h\n'}
+[6.917846] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__type_support.c\n'}
+[6.917934] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__type_support.c\n'}
+[6.918016] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__type_support.c\n'}
+[6.918108] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__type_support.c\n'}
+[6.918182] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__rosidl_typesupport_introspection_c.h\n'}
+[6.918260] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__type_support.c\n'}
+[6.918348] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__rosidl_typesupport_introspection_c.h\n'}
+[6.918427] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__type_support.c\n'}
+[6.918529] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__rosidl_typesupport_introspection_c.h\n'}
+[6.918599] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__type_support.c\n'}
+[6.918684] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__rosidl_typesupport_introspection_c.h\n'}
+[6.918764] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__type_support.c\n'}
+[6.918852] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__rosidl_typesupport_introspection_c.h\n'}
+[6.918932] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__rosidl_typesupport_introspection_c.h\n'}
+[6.919021] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__type_support.c\n'}
+[6.919101] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__rosidl_typesupport_introspection_c.h\n'}
+[6.919182] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__rosidl_typesupport_introspection_c.h\n'}
+[6.919262] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__type_support.c\n'}
+[6.919383] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__rosidl_typesupport_introspection_c.h\n'}
+[6.919467] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__type_support.c\n'}
+[6.919572] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__rosidl_typesupport_introspection_c.h\n'}
+[6.919672] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__rosidl_typesupport_introspection_c.h\n'}
+[6.919770] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__rosidl_typesupport_introspection_c.h\n'}
+[6.919866] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__type_support.c\n'}
+[6.919966] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__type_support.c\n'}
+[6.920067] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__type_support.c\n'}
+[6.920180] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__type_support.c\n'}
+[6.920297] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__rosidl_typesupport_introspection_c.h\n'}
+[6.920422] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__rosidl_typesupport_introspection_c.h\n'}
+[6.920546] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__type_support.c\n'}
+[6.920673] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[6.920847] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_c.so\n'}
+[6.921384] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_c.so" to ""\n'}
+[6.921438] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_c.so\n'}
+[6.921763] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_c.so" to ""\n'}
+[6.921814] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg\n'}
+[6.921858] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg\n'}
+[6.921899] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detection.hpp\n'}
+[6.921989] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point3_d.hpp\n'}
+[6.922087] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point2_d.hpp\n'}
+[6.922179] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/mask.hpp\n'}
+[6.922271] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point3_d_array.hpp\n'}
+[6.922364] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/target_point.hpp\n'}
+[6.922457] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/path_planning_result.hpp\n'}
+[6.922567] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail\n'}
+[6.922643] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__traits.hpp\n'}
+[6.922746] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__traits.hpp\n'}
+[6.922841] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__struct.hpp\n'}
+[6.922938] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__type_support.hpp\n'}
+[6.923037] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__type_support.hpp\n'}
+[6.923130] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__builder.hpp\n'}
+[6.923227] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__type_support.hpp\n'}
+[6.923326] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__struct.hpp\n'}
+[6.923426] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__struct.hpp\n'}
+[6.923543] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__type_support.hpp\n'}
+[6.923640] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__struct.hpp\n'}
+[6.923737] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__traits.hpp\n'}
+[6.923833] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__builder.hpp\n'}
+[6.923927] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__builder.hpp\n'}
+[6.923954] (-) TimerEvent: {}
+[6.924023] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__struct.hpp\n'}
+[6.924121] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__builder.hpp\n'}
+[6.924215] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__struct.hpp\n'}
+[6.924314] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__builder.hpp\n'}
+[6.924408] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__traits.hpp\n'}
+[6.924505] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__traits.hpp\n'}
+[6.924694] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__traits.hpp\n'}
+[6.924800] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__builder.hpp\n'}
+[6.924889] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__type_support.hpp\n'}
+[6.924987] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__type_support.hpp\n'}
+[6.925082] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__struct.hpp\n'}
+[6.925182] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__type_support.hpp\n'}
+[6.925277] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__traits.hpp\n'}
+[6.925374] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__type_support.hpp\n'}
+[6.925473] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__builder.hpp\n'}
+[6.925577] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__builder.hpp\n'}
+[6.925676] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__traits.hpp\n'}
+[6.925773] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__struct.hpp\n'}
+[6.925873] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__struct.hpp\n'}
+[6.925973] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__struct.hpp\n'}
+[6.926074] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__type_support.hpp\n'}
+[6.926179] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__builder.hpp\n'}
+[6.926272] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__builder.hpp\n'}
+[6.926369] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__struct.hpp\n'}
+[6.926464] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__builder.hpp\n'}
+[6.926564] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__builder.hpp\n'}
+[6.926662] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__traits.hpp\n'}
+[6.926762] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__builder.hpp\n'}
+[6.926857] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__struct.hpp\n'}
+[6.926955] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__traits.hpp\n'}
+[6.927050] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__traits.hpp\n'}
+[6.927145] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__struct.hpp\n'}
+[6.927240] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__type_support.hpp\n'}
+[6.927336] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__struct.hpp\n'}
+[6.927433] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__type_support.hpp\n'}
+[6.927532] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__struct.hpp\n'}
+[6.927634] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__builder.hpp\n'}
+[6.927733] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__traits.hpp\n'}
+[6.927833] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__type_support.hpp\n'}
+[6.927929] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__type_support.hpp\n'}
+[6.928024] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__type_support.hpp\n'}
+[6.928120] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__traits.hpp\n'}
+[6.928225] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__type_support.hpp\n'}
+[6.928315] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__builder.hpp\n'}
+[6.928412] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__builder.hpp\n'}
+[6.928513] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__traits.hpp\n'}
+[6.928614] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__traits.hpp\n'}
+[6.928712] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__type_support.hpp\n'}
+[6.928810] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__struct.hpp\n'}
+[6.928911] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__traits.hpp\n'}
+[6.929012] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[6.929101] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/motion_command.hpp\n'}
+[6.929188] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/vector2.hpp\n'}
+[6.929274] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/bounding_box3_d.hpp\n'}
+[6.929364] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/pose2_d.hpp\n'}
+[6.929450] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/point2_d.hpp\n'}
+[6.929547] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/lane_info.hpp\n'}
+[6.929639] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/key_point2_d_array.hpp\n'}
+[6.929727] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detection_array.hpp\n'}
+[6.929814] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/bounding_box2_d.hpp\n'}
+[6.929951] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg\n'}
+[6.929991] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg\n'}
+[6.930032] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[6.930120] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail\n'}
+[6.930167] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930272] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930371] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930478] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930575] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930677] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930775] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930874] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.930973] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931076] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931176] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931274] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931373] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931467] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/dds_fastrtps\n'}
+[6.931567] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931673] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931774] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.931927] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so\n'}
+[6.932613] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[6.932662] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg\n'}
+[6.932701] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg\n'}
+[6.932741] (interfaces_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail\n'}
+[6.932781] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.932877] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__type_support.cpp\n'}
+[6.932982] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.933084] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.933215] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d_array__type_support.cpp\n'}
+[6.933318] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.933420] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__type_support.cpp\n'}
+[6.933535] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point2_d__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.933638] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__type_support.cpp\n'}
+[6.933744] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/motion_command__type_support.cpp\n'}
+[6.933849] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d_array__type_support.cpp\n'}
+[6.933953] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.934055] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__type_support.cpp\n'}
+[6.934160] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.934262] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/point2_d__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.934365] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box2_d__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.934469] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/key_point3_d__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.934579] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__type_support.cpp\n'}
+[6.934712] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/vector2__type_support.cpp\n'}
+[6.934812] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/lane_info__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.934919] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__type_support.cpp\n'}
+[6.935011] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__type_support.cpp\n'}
+[6.935112] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__type_support.cpp\n'}
+[6.935225] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__type_support.cpp\n'}
+[6.935334] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.935435] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/path_planning_result__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.935537] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/pose2_d__type_support.cpp\n'}
+[6.935639] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/mask__type_support.cpp\n'}
+[6.935741] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detection_array__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.935838] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__type_support.cpp\n'}
+[6.935941] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/target_point__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.936041] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/bounding_box3_d__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.936209] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so\n'}
+[6.937049] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[6.937098] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_cpp.so\n'}
+[6.937425] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_cpp.so" to ""\n'}
+[6.937498] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/pythonpath.sh\n'}
+[6.937589] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/pythonpath.dsv\n'}
+[6.937706] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info\n'}
+[6.937846] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[6.937940] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[6.938028] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[6.938113] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[6.938256] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg\n'}
+[6.938332] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/__init__.py\n'}
+[6.938413] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.938558] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[6.938710] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg\n'}
+[6.938786] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_bounding_box2_d.py\n'}
+[6.938883] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/__init__.py\n'}
+[6.938973] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detection_array_s.c\n'}
+[6.939065] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point2_d.py\n'}
+[6.939161] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_mask_s.c\n'}
+[6.939261] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point3_d.py\n'}
+[6.939358] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detection_array.py\n'}
+[6.939454] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detection.py\n'}
+[6.939562] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point3_d_array_s.c\n'}
+[6.939660] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point2_d_s.c\n'}
+[6.939853] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_bounding_box3_d_s.c\n'}
+[6.939966] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_path_planning_result.py\n'}
+[6.940023] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_point2_d.py\n'}
+[6.940127] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_mask.py\n'}
+[6.940222] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_motion_command.py\n'}
+[6.940268] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_target_point_s.c\n'}
+[6.940358] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point2_d_array_s.c\n'}
+[6.940453] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_vector2_s.c\n'}
+[6.940560] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detection_s.c\n'}
+[6.940660] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_lane_info.py\n'}
+[6.940775] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_bounding_box3_d.py\n'}
+[6.940867] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_pose2_d_s.c\n'}
+[6.940957] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_target_point.py\n'}
+[6.941052] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_vector2.py\n'}
+[6.941144] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point3_d_s.c\n'}
+[6.941241] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_pose2_d.py\n'}
+[6.941339] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point3_d_array.py\n'}
+[6.941432] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point2_d_array.py\n'}
+[6.941534] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_lane_info_s.c\n'}
+[6.941631] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_bounding_box2_d_s.c\n'}
+[6.941730] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_point2_d_s.c\n'}
+[6.941817] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_path_planning_result_s.c\n'}
+[6.941920] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_motion_command_s.c\n'}
+[6.942018] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_c.c\n'}
+[6.942171] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[6.942327] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/libinterfaces_pkg__rosidl_generator_py.so\n'}
+[6.942536] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.942662] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.987666] (interfaces_pkg) StdoutLine: {'line': b"Listing '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg'...\n"}
+[6.987750] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/__init__.py'...\n"}
+[6.987781] (interfaces_pkg) StdoutLine: {'line': b"Listing '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg'...\n"}
+[6.987806] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/__init__.py'...\n"}
+[6.987830] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_bounding_box2_d.py'...\n"}
+[6.987854] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_bounding_box3_d.py'...\n"}
+[6.987882] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detection.py'...\n"}
+[6.987903] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detection_array.py'...\n"}
+[6.987924] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point2_d.py'...\n"}
+[6.987944] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point2_d_array.py'...\n"}
+[6.987964] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point3_d.py'...\n"}
+[6.987984] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_key_point3_d_array.py'...\n"}
+[6.988003] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_lane_info.py'...\n"}
+[6.988023] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_mask.py'...\n"}
+[6.988042] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_motion_command.py'...\n"}
+[6.988064] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_path_planning_result.py'...\n"}
+[6.988085] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_point2_d.py'...\n"}
+[6.988105] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_pose2_d.py'...\n"}
+[6.988124] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_target_point.py'...\n"}
+[6.988143] (interfaces_pkg) StdoutLine: {'line': b"Compiling '/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_vector2.py'...\n"}
+[6.991781] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.991942] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.992008] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.992304] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.992495] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.992578] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.992606] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_py.so\n'}
+[6.993084] (interfaces_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/tu03/ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_py.so" to ""\n'}
+[6.993145] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Point2D.idl\n'}
+[6.993185] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Vector2.idl\n'}
+[6.993210] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Pose2D.idl\n'}
+[6.993233] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/BoundingBox2D.idl\n'}
+[6.993268] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/BoundingBox3D.idl\n'}
+[6.993351] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Mask.idl\n'}
+[6.993443] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint2D.idl\n'}
+[6.993542] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint2DArray.idl\n'}
+[6.993630] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint3D.idl\n'}
+[6.993729] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint3DArray.idl\n'}
+[6.993822] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Detection.idl\n'}
+[6.993918] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/DetectionArray.idl\n'}
+[6.994006] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/LaneInfo.idl\n'}
+[6.994106] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/MotionCommand.idl\n'}
+[6.994192] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/TargetPoint.idl\n'}
+[6.994286] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/PathPlanningResult.idl\n'}
+[6.994375] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Point2D.msg\n'}
+[6.994469] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Vector2.msg\n'}
+[6.994568] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Pose2D.msg\n'}
+[6.994664] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/BoundingBox2D.msg\n'}
+[6.994751] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/BoundingBox3D.msg\n'}
+[6.994843] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Mask.msg\n'}
+[6.994937] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint2D.msg\n'}
+[6.995033] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint2DArray.msg\n'}
+[6.995121] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint3D.msg\n'}
+[6.995219] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/KeyPoint3DArray.msg\n'}
+[6.995313] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Detection.msg\n'}
+[6.995411] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/DetectionArray.msg\n'}
+[6.995515] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/LaneInfo.msg\n'}
+[6.995611] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/MotionCommand.msg\n'}
+[6.995708] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/TargetPoint.msg\n'}
+[6.995804] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/PathPlanningResult.msg\n'}
+[6.995927] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/package_run_dependencies/interfaces_pkg\n'}
+[6.996057] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/parent_prefix_path/interfaces_pkg\n'}
+[6.996159] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/ament_prefix_path.sh\n'}
+[6.996256] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/ament_prefix_path.dsv\n'}
+[6.996347] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/path.sh\n'}
+[6.996440] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/path.dsv\n'}
+[6.996548] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.bash\n'}
+[6.996644] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.sh\n'}
+[6.996735] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.zsh\n'}
+[6.996835] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.dsv\n'}
+[6.996922] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.dsv\n'}
+[6.997041] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/packages/interfaces_pkg\n'}
+[6.997159] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cExport.cmake\n'}
+[6.997259] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cExport-noconfig.cmake\n'}
+[6.997368] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[6.997471] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[6.997583] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cExport.cmake\n'}
+[6.997677] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[6.997813] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cExport.cmake\n'}
+[6.997948] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[6.998058] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cppExport.cmake\n'}
+[6.998190] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[6.998319] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[6.998450] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[6.998578] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[6.998719] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cppExport.cmake\n'}
+[6.998839] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[6.998970] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_pyExport.cmake\n'}
+[6.999079] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_pyExport-noconfig.cmake\n'}
+[6.999194] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake-extras.cmake\n'}
+[6.999328] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[6.999445] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[6.999550] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[6.999679] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[6.999805] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[6.999929] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[7.000032] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkgConfig.cmake\n'}
+[7.000120] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkgConfig-version.cmake\n'}
+[7.000237] (interfaces_pkg) StdoutLine: {'line': b'-- Installing: /home/tu03/ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.xml\n'}
+[7.002317] (interfaces_pkg) CommandEnded: {'returncode': 0}
+[7.020455] (interfaces_pkg) JobEnded: {'identifier': 'interfaces_pkg', 'rc': 0}
+[7.020991] (-) EventReactorShutdown: {}

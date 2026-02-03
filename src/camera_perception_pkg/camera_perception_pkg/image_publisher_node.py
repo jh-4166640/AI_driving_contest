@@ -18,18 +18,23 @@ import os
 PUB_TOPIC_NAME = 'image_raw'
 
 # 데이터 입력 소스: 'camera', 'image', 또는 'video' 중 택1하여 입력
-DATA_SOURCE = 'video'
+#DATA_SOURCE = 'video'
+DATA_SOURCE = 'image'
+#DATA_SOURCE = 'camera'
 
 # 카메라(웹캠) 장치 번호 (ls /dev/video* 명령을 터미널 창에 입력하여 확인)
-CAM_NUM = 0
+CAM_NUM = 1
 
 # 이미지 데이터가 들어있는 디렉토리의 경로를 입력
-IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datasets/sample_dataset'
+# IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datasets/sample_dataset'
+#IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datacapturesets/dataset' # curve_data
+IMAGE_DIRECTORY_PATH = 'src/captures' # capture 
+
 
 # 비디오 데이터 파일의 경로를 입력
 VIDEO_FILE_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datasets/driving_simulation.mp4'
 
-# 화면에 publish하는 이미지를 띄울것인지 여부: True, 또는 False 중 택1하여 입력
+# 화면에 publish하는 이미지를 띄울것인지 여부: TruIMAGE_DIRECTORY_PATHe, 또는 False 중 택1하여 입력
 SHOW_IMAGE = True
 
 # 이미지 발행 주기 (초) - 소수점 필요 (int형은 반영되지 않음)
@@ -97,7 +102,7 @@ class ImagePublisherNode(Node):
             if ret:
                 frame = cv2.resize(frame, (640, 480))
                 image_msg = self.br.cv2_to_imgmsg(frame)
-                image_msg.header = Header()
+                image_msg.header = Header().image
                 image_msg.header.stamp = self.get_clock().now().to_msg()
                 image_msg.header.frame_id = 'image_frame' 
                 self.publisher.publish(self.br.cv2_to_imgmsg(frame))
@@ -110,7 +115,7 @@ class ImagePublisherNode(Node):
                 img_path = os.path.join(self.img_dir, img_file)
                 img = cv2.imread(img_path)
                 if img is None:
-                    self.get_logger().warn('Skipping non-image file: %s' % img_file)
+                    self.get_logger().warn('Skipimageping non-image file: %s' % img_file)
                 else:
                     img = cv2.resize(img, (640, 480))
                     image_msg = self.br.cv2_to_imgmsg(img)

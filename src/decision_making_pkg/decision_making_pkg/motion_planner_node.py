@@ -1,10 +1,11 @@
 import rclpy
+import math
 from rclpy.node import Node
 from rclpy.qos import QoSProfile
 from rclpy.qos import QoSHistoryPolicy
 from rclpy.qos import QoSDurabilityPolicy
 from rclpy.qos import QoSReliabilityPolicy
-
+from std_msgs.msg import Float32
 from std_msgs.msg import String, Bool
 from interfaces_pkg.msg import PathPlanningResult, DetectionArray, MotionCommand
 from .lib import decision_making_func_lib as DMFL
@@ -15,7 +16,7 @@ SUB_PATH_TOPIC_NAME = "path_planning_result"
 SUB_TRAFFIC_LIGHT_TOPIC_NAME = "yolov8_traffic_light_info"
 SUB_LIDAR_OBSTACLE_TOPIC_NAME = "lidar_obstacle_info"
 PUB_TOPIC_NAME = "topic_control_signal"
-
+TARGET_SLOPE_TOPIC_NAME = "target_slope"
 #----------------------------------------------
 
 # 모션 플랜 발행 주기 (초) - 소수점 필요 (int형은 반영되지 않음)
@@ -31,9 +32,9 @@ class MotionPlanningNode(Node):
         self.sub_traffic_light_topic = self.declare_parameter('sub_traffic_light_topic', SUB_TRAFFIC_LIGHT_TOPIC_NAME).value
         self.sub_lidar_obstacle_topic = self.declare_parameter('sub_lidar_obstacle_topic', SUB_LIDAR_OBSTACLE_TOPIC_NAME).value
         self.pub_topic = self.declare_parameter('pub_topic', PUB_TOPIC_NAME).value
-        
         self.timer_period = self.declare_parameter('timer', TIMER).value
-
+        # target_slope
+        self.target_slope_topic = self.declare_parameter('target_slope_topic', TARGET_SLOPE_TOPIC_NAME).value
         # QoS 설정
         self.qos_profile = QoSProfile(
             reliability=QoSReliabilityPolicy.RELIABLE,
@@ -61,7 +62,7 @@ class MotionPlanningNode(Node):
 
         # 퍼블리셔 설정
         self.publisher = self.create_publisher(MotionCommand, self.pub_topic, self.qos_profile)
-
+        self.target_slope_pub = self.create_publisher(Float32, self.target_slope_topic, self.qos_profile)
         # 타이머 설정
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
 
@@ -76,14 +77,17 @@ class MotionPlanningNode(Node):
 
     def lidar_callback(self, msg: Bool):
         self.lidar_data = msg
-        
+
+
     def timer_callback(self):
 
         if self.lidar_data is not None and self.lidar_data.data is True:
             # 라이다가 장애물을 감지한 경우
             self.steering_command = 0 
             self.left_speed_command = 0 
-            self.right_speed_command = 0 
+            self.right_speed_command = 0
+            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@나야")
+            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@나야")
 
         elif self.traffic_light_data is not None and self.traffic_light_data.data == 'Red':
             # 빨간색 신호등을 감지한 경우
@@ -94,7 +98,7 @@ class MotionPlanningNode(Node):
                     y_min = int(detection.bbox.center.position.y - detection.bbox.size.y / 2) # bbox의 좌측상단 꼭짓점 y좌표
                     y_max = int(detection.bbox.center.position.y + detection.bbox.size.y / 2) # bbox의 우측하단 꼭짓점 y좌표
 
-                    if y_max < 150:
+                    if y_max < 200: # 150 -> 200 수정
                         # 신호등 위치에 따른 정지명령 결정
                         self.steering_command = 0 
                         self.left_speed_command = 0 
@@ -102,20 +106,103 @@ class MotionPlanningNode(Node):
         else:
             if self.path_data is None:
                 self.steering_command = 0
+                self.left_speed_command = 0
+                self.right_speed_command = 0
             else:
                 target_slope = DMFL.calculate_slope_between_points(self.path_data[-10], self.path_data[-1])
+                target_slope_msg = Float32()
+                target_slope_msg.data = target_slope
+                self.target_slope_pub.publish(target_slope_msg)
+
+                self.left_speed_command = 255  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 255  # 예시 속도 값 (255가 최대 속도)
+
+                if target_slope < 0 :  # left
+                    if 0 > target_slope >= -5:
+                        self.steering_command = 0# 예시 조향 값 (7이 최대 조향)
+                    elif -5 > target_slope >= -10:
+                        self.steering_command = 0
+                    elif -10 > target_slope >= -15:
+                        self.steering_command = -1
+                    elif -15 > target_slope >= -20:
+                        self.steering_command = -2
+                    elif -20 > target_slope >= -50:
+                        self.steering_command = -3 
+                    elif -50 > target_slope >= -60:
+                        self.steering_command = -4 
+                    elif -60 > target_slope >= -70:
+                        self.steering_command = -5
+                    elif -70 > target_slope:
+                        self.steering_command = -7           
+                    else:
+                        self.steering_command = 0    
+                elif target_slope > 0: # right
+                    if 0 < target_slope <= 5:
+                        self.steering_command = 0# 예시 조향 값 (7이 최대 조향)
+                    elif 5 < target_slope <= 10:
+                        self.steering_command = 0
+                    elif 10 < target_slope <= 15:
+                        self.steering_command = 1
+                    elif 15 < target_slope <= 20:
+                        self.steering_command = 2
+                    elif 20 < target_slope <= 50:
+                        self.steering_command = 3 
+                    elif 50 < target_slope <= 60:
+                        self.steering_command = 4 
+                    elif 60 < target_slope <= 65:
+                        self.steering_command = 5
+                    elif 65 < target_slope:
+                        self.steering_command = 7           
+                    else:
+                        self.steering_command = 0    
+                else :
+                    self.steering_command = 0    
                 
-                if target_slope > 0:
-                    self.steering_command =  7 # 예시 조향 값 (7이 최대 조향) 
-                elif target_slope < 0:
-                    self.steering_command =  -7
+                
+                    
+                """
+                flag = 1
+                if(target_slope < 0):
+                    flag = -1
+                target_slope = abs(target_slope)
+
+                print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
+                print(target_slope)
+                print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
+
+                if 0 < target_slope <= 5:
+                    self.steering_command = 0# 예시 조향 값 (7이 최대 조향)
+                elif 5 < target_slope <= 10:
+                    self.steering_command = 0
+                elif 10 < target_slope <= 15:
+                    self.steering_command = 1
+                elif 15 < target_slope <= 20:
+                    self.steering_command = 2
+                elif 20 < target_slope <= 50:
+                    self.steering_command = 3 
+                elif 50 < target_slope <= 60:
+                    self.steering_command = 4 
+                elif 60 < target_slope <= 65:
+                    self.steering_command = 5
+                elif 65 < target_slope:
+                    self.steering_command = 7           
                 else:
                     self.steering_command = 0
 
+                self.steering_command = self.steering_command * flag
 
-            self.left_speed_command = 100  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 100  # 예시 속도 값 (255가 최대 속도)
+                self.left_speed_command = 255  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 255  # 예시 속도 값 (255가 최대 속도)
 
+            
+                # if target_slope > 0:
+                #     self.steering_command =  3 # 예시 조향 값 (7이 최대 조향) 
+                # elif target_slope < 0:
+                #     self.steering_command =  -7
+                # else:
+                #     self.steering_command = 0
+
+                """
 
 
         self.get_logger().info(f"steering: {self.steering_command}, " 

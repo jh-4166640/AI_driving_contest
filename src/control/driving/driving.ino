@@ -2,7 +2,7 @@
 const unsigned int MAX_INPUT = 15;
 
 // 핀 번호 변수
-const int STEERING_1 = 2;
+const int STEERING_1 = 2x;
 const int STEERING_2 = 3;
 const int FORWARD_RIGHT_1 = 4;
 const int FORWARD_RIGHT_2 = 5;
@@ -14,8 +14,8 @@ const int POT = A2;
 const int STEERING_SPEED = 128;
 
 // 가변저항 값 범위
-const int resistance_most_left = 460;
-const int resistance_most_right = 352;
+const int resistance_most_left = 535;
+const int resistance_most_right = 375;
 
 // 조향 최대 단계 수 (한 쪽 기준)
 const int MAX_STEERING_STEP = 7;
@@ -38,7 +38,7 @@ void processIncomingByte(const byte inByte);
 void processData(const char *data);
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(115200);
 
     // 핀 모드 설정
     pinMode(POT, INPUT);
@@ -109,6 +109,7 @@ void setLeftMotorSpeed(int speed) {
         analogWrite(FORWARD_LEFT_2, (-1) * speed);
     }
 }
+
 
 void setRightMotorSpeed(int speed) {
     if (speed > 0) {
