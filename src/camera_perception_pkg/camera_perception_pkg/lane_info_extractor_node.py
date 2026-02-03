@@ -7,106 +7,9 @@ from rclpy.qos import QoSDurabilityPolicy
 from rclpy.qos import QoSReliabilityPolicy
 
 from cv_bridge import CvBridge
-
+from std_msgs.msg import String
 from sensor_msgs.msg import Image
-from interfaces_pkg.msg import TargetPoint, LaneInfo, DetectionArrclass Yolov8InfoExtractor(Node):
-    def __init__(self):
-        super().__init__('lane_info_extractor_node')
-
-        self.sub_topic = self.declare_parameter('sub_detection_topic', SUB_TOPIC_NAME).value
-        self.pub_topic = self.declare_parameter('pub_topic', PUB_TOPIC_NAME).value
-        self.show_image = self.declare_parameter('show_image', SHOW_IMAGE).value
-
-        self.cv_bridge = CvBridge()
-
-        # QoS settings
-        self.qos_profile = QoSProfile(
-            reliability=QoSReliabilityPolicy.RELIABLE,
-            history=QoSHistoryPolicy.KEEP_LAST,
-            durability=QoSDurabilityPolicy.VOLATILE,
-            depth=1
-        )
-        
-        self.subscriber = self.create_subscription(DetectionArray, self.sub_topic, self.yolov8_detections_callback, self.qos_profile)
-        self.publisher = self.create_publisher(LaneInfo, self.pub_topic, self.qos_profile)
-
-        # ROI 이미지 퍼블리셔 추가
-        self.roi_image_publisher = self.create_publisher(Image, ROI_IMAGE_TOPIC_NAME, self.qos_profile)
-
-    def yolov8_detections_callback(self, detection_msg: DetectionArray):
-        if len(detection_msg.detections) == 0:
-            return
-        
-        lane2_edge_image = CPFL.draw_edges(detection_msg, cls_name='lane2', color=255)
-        lane1_edge_image = CPFL.draw_edges(detection_msg, cls_name='lane1', color=255) # lane1 추가
-
-        target_edge_image = lane1_edge_image
-        
-        # if another car detection (car position y>y_std && x - center?) :
-            # lane change
-            # if current lane2: target change to lane1 
-            # elif current lane1: target change to lane2
-            # 
-
-        (h, w) = (target_edge_image.shape[0], target_edge_image.shape[1])
-        dst_mat = [[round(w * 0.3), round(h * 0.0)], [round(w * 0.7), round(h * 0.0)], [round(w * 0.7), h], [round(w * 0.3), h]]
-        src_mat = [[238, 316],[402, 313], [501, 476], [155, 476]]
-        
-        lane_bird_image = CPFL.bird_convert(target_edge_image, srcmat=src_mat, dstmat=dst_mat)
-        roi_image = CPFL.roi_rectangle_below(lane_bird_image, cutting_idx=300)
-
-        if self.show_image:
-            cv2.imshow('selected_lane_edge', target_edge_image)
-            cv2.imshow('roi_img', roi_image)
-            cv2.waitKey(1)
-
-        """
-        (h, w) = (lane2_edge_image.shape[0], lane2_edge_image.shape[1]) #(480, 640)
-        #dst_mat = [[round(w * 0.25), round(h * 0.0)], [round(w * 0.65), round(h * 0.0)], [round(w * 0.65), h], [round(w * 0.25), h]] # modified 01
-        dst_mat = [[round(w * 0.3), round(h * 0.0)], [round(w * 0.7), round(h * 0.0)], [round(w * 0.7), h], [round(w * 0.3), h]]
-        # 비율 수정함
-        src_mat = [[238, 316],[402, 313], [501, 476], [155, 476]] # 수정 가능
-        
-        lane2_bird_image = CPFL.bird_convert(lane2_edge_image, srcmat=src_mat, dstmat=dst_mat)
-        roi_image = CPFL.roi_rectangle_below(lane2_bird_image, cutting_idx=300)
-
-        if self.show_image:
-            cv2.imshow('lane2_edge_image', lane2_edge_image)
-            cv2.imshow('lane2_bird_img', lane2_bird_image)
-            cv2.imshow('roi_img', roi_image)
-            cv2.waitKey(1)
-        """
-        
-
-        # roi_image를 uint8 형식으로 변환
-        roi_image = cv2.convertScaleAbs(roi_image)  # 64FC1 -> uint8로 변환
-
-        # roi_image를 ROS Image 메시지로 변환
-        try:
-            roi_image_msg = self.cv_bridge.cv2_to_imgmsg(roi_image, encoding="mono8")
-            # ROI 이미지를 퍼블리시
-            self.roi_image_publisher.publish(roi_image_msg)
-        except Exception as e:
-            self.get_logger().error(f"Failed to convert and publish ROI image: {e}")
-        
-        grad = CPFL.dominant_gradient(roi_image, theta_limit=70)
-                
-        target_points = []
-        for target_point_y in range(5, 155, 30):  # 예시로 5에서 155까지 50씩 증가
-            target_point_x = CPFL.get_lane_center(roi_image, detection_height=target_point_y, 
-                                                detection_thickness=10, road_gradient=grad, lane_width=300)
-            
-            target_point = TargetPoint()
-            target_point.target_x = round(target_point_x)
-            target_point.target_y = round(target_point_y)
-            target_points.append(target_point)
-
-        lane = LaneInfo()
-        lane.slope = grad
-        lane.target_points = target_points
-
-        self.publisher.publish(lane)
-ay, BoundingBox2D, Detection
+from interfaces_pkg.msg import TargetPoint, LaneInfo, DetectionArray, BoundingBox2D, Detection
 from .lib import camera_perception_func_lib as CPFL
 
 #---------------Variable Setting---------------
@@ -126,6 +29,10 @@ class Yolov8InfoExtractor(Node):
     def __init__(self):
         super().__init__('lane_info_extractor_node')
 
+        self.is_obstacle_detected = False # obstacle_장애물 여부 초기화 
+        self.cur_lane = 2 # obstacle_현재 주행 중인 라인
+        self.change_flg = 0
+
         self.sub_topic = self.declare_parameter('sub_detection_topic', SUB_TOPIC_NAME).value
         self.pub_topic = self.declare_parameter('pub_topic', PUB_TOPIC_NAME).value
         self.show_image = self.declare_parameter('show_image', SHOW_IMAGE).value
@@ -139,31 +46,55 @@ class Yolov8InfoExtractor(Node):
             durability=QoSDurabilityPolicy.VOLATILE,
             depth=1
         )
-        
+        #obstacle_장애물여부 구독
+        self.obstacle_subscriber = self.create_subscription( 
+            String, # 메시지 타입 (예: String)
+            'yolov8_car_info', # 토픽 이름
+            self.obstacle_callback, 
+            self.qos_profile)
         self.subscriber = self.create_subscription(DetectionArray, self.sub_topic, self.yolov8_detections_callback, self.qos_profile)
         self.publisher = self.create_publisher(LaneInfo, self.pub_topic, self.qos_profile)
 
         # ROI 이미지 퍼블리셔 추가
         self.roi_image_publisher = self.create_publisher(Image, ROI_IMAGE_TOPIC_NAME, self.qos_profile)
+    
+    def obstacle_callback(self, detected_msg): # obstacle_장애물 callback 함수
+        if detected_msg.data == 'Change':
+            self.obstacle_set_change_flg()            
+
+
 
     def yolov8_detections_callback(self, detection_msg: DetectionArray):
         if len(detection_msg.detections) == 0:
             return
         
         lane2_edge_image = CPFL.draw_edges(detection_msg, cls_name='lane2', color=255)
+        lane1_edge_image = CPFL.draw_edges(detection_msg, cls_name='lane1', color=255)
+        if self.change_flg == True:
+            if self.cur_lane == 1:
+                self.cur_lane = 2
+            elif self.cur_lane == 2:
+                self.cur_lane = 1
+            self.obstacle_clear_change_flg()
 
-        (h, w) = (lane2_edge_image.shape[0], lane2_edge_image.shape[1]) #(480, 640)
+        if self.cur_lane == 1:
+            target_lane_edge_image = lane1_edge_image
+        elif self.cur_lane == 2:
+            target_lane_edge_image = lane2_edge_image
+        #target_lane_edge_image = lane1_edge_image
+
+        (h, w) = (target_lane_edge_image.shape[0], target_lane_edge_image.shape[1]) #(480, 640)
         #dst_mat = [[round(w * 0.25), round(h * 0.0)], [round(w * 0.65), round(h * 0.0)], [round(w * 0.65), h], [round(w * 0.25), h]] # modified 01
         dst_mat = [[round(w * 0.3), round(h * 0.0)], [round(w * 0.7), round(h * 0.0)], [round(w * 0.7), h], [round(w * 0.3), h]]
         # 비율 수정함
         src_mat = [[238, 316],[402, 313], [501, 476], [155, 476]] # 수정 가능
         
-        lane2_bird_image = CPFL.bird_convert(lane2_edge_image, srcmat=src_mat, dstmat=dst_mat)
-        roi_image = CPFL.roi_rectangle_below(lane2_bird_image, cutting_idx=300)
+        target_lane_bird_image = CPFL.bird_convert(target_lane_edge_image, srcmat=src_mat, dstmat=dst_mat)
+        roi_image = CPFL.roi_rectangle_below(target_lane_bird_image, cutting_idx=300)
 
         if self.show_image:
-            cv2.imshow('lane2_edge_image', lane2_edge_image)
-            cv2.imshow('lane2_bird_img', lane2_bird_image)
+            cv2.imshow('target_lane_edge_image', target_lane_edge_image)
+            cv2.imshow('target_lane_bird_img', target_lane_bird_image)
             cv2.imshow('roi_img', roi_image)
             cv2.waitKey(1)
 
@@ -196,6 +127,14 @@ class Yolov8InfoExtractor(Node):
 
         self.publisher.publish(lane)
 
+    def obstacle_set_change_flg(self):
+        self.change_flg = True
+    def obstacle_clear_change_flg(self):
+        self.change_flg = False
+    def obstacle_set_lane2(self):
+        self.cur_lane = 2
+    def obstacle_set_lane1(self):
+        self.cur_lane = 1
 
 def main(args=None):
     rclpy.init(args=args)

@@ -1,1 +1,0 @@
-/home/tu03/ros2_ws/src/camera_perception_pkg/setup.py

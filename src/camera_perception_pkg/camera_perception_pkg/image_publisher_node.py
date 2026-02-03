@@ -27,8 +27,10 @@ CAM_NUM = 1
 
 # 이미지 데이터가 들어있는 디렉토리의 경로를 입력
 # IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datasets/sample_dataset'
-#IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datacapturesets/dataset' # curve_data
-IMAGE_DIRECTORY_PATH = 'src/captures' # capture 
+# IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datacapturesets/dataset' # curve_data
+IMAGE_DIRECTORY_PATH = 'src/another_car_test' # 장애물 주행 검증용 directory
+# IMAGE_DIRECTORY_PATH = 'src/captures' # capture 
+
 
 
 # 비디오 데이터 파일의 경로를 입력
@@ -39,6 +41,8 @@ SHOW_IMAGE = True
 
 # 이미지 발행 주기 (초) - 소수점 필요 (int형은 반영되지 않음)
 TIMER = 0.03
+#TIMER = 0.03
+
 #----------------------------------------------
 
 class ImagePublisherNode(Node):
