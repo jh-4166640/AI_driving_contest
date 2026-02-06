@@ -19,16 +19,18 @@ PUB_TOPIC_NAME = 'image_raw'
 
 # 데이터 입력 소스: 'camera', 'image', 또는 'video' 중 택1하여 입력
 #DATA_SOURCE = 'video'
-DATA_SOURCE = 'image'
-#DATA_SOURCE = 'camera'
+#DATA_SOURCE = 'image'
+DATA_SOURCE = 'camera'
 
 # 카메라(웹캠) 장치 번호 (ls /dev/video* 명령을 터미널 창에 입력하여 확인)
 CAM_NUM = 1
 
 # 이미지 데이터가 들어있는 디렉토리의 경로를 입력
 # IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datasets/sample_dataset'
-#IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datacapturesets/dataset' # curve_data
-IMAGE_DIRECTORY_PATH = 'src/captures' # capture 
+# IMAGE_DIRECTORY_PATH = 'src/camera_perception_pkg/camera_perception_pkg/lib/Collected_Datacapturesets/dataset' # curve_data
+IMAGE_DIRECTORY_PATH = 'src/another_car_test' # 장애물 주행 검증용 directory
+# IMAGE_DIRECTORY_PATH = 'src/captures' # capture 
+
 
 
 # 비디오 데이터 파일의 경로를 입력
@@ -39,9 +41,9 @@ SHOW_IMAGE = True
 
 # 이미지 발행 주기 (초) - 소수점 필요 (int형은 반영되지 않음)
 TIMER = 0.03
+#TIMER = 0.03
 
 #----------------------------------------------
-
 class ImagePublisherNode(Node):
     def __init__(self, data_source=DATA_SOURCE, cam_num=CAM_NUM, img_dir=IMAGE_DIRECTORY_PATH, video_path=VIDEO_FILE_PATH, pub_topic=PUB_TOPIC_NAME, logger=SHOW_IMAGE, timer=TIMER):
         super().__init__('image_publisher_node')
@@ -103,7 +105,7 @@ class ImagePublisherNode(Node):
             if ret:
                 frame = cv2.resize(frame, (640, 480))
                 image_msg = self.br.cv2_to_imgmsg(frame)
-                image_msg.header = Header().image
+                image_msg.header = Header()
                 image_msg.header.stamp = self.get_clock().now().to_msg()
                 image_msg.header.frame_id = 'image_frame' 
                 self.publisher.publish(self.br.cv2_to_imgmsg(frame))
@@ -116,7 +118,7 @@ class ImagePublisherNode(Node):
                 img_path = os.path.join(self.img_dir, img_file)
                 img = cv2.imread(img_path)
                 if img is None:
-                    self.get_logger().warn('Skipimageping non-image file: %s' % img_file)
+                    self.get_logger().warn('Skipping non-image file: %s' % img_file)
                 else:
                     img = cv2.resize(img, (640, 480))
                     image_msg = self.br.cv2_to_imgmsg(img)

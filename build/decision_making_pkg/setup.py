@@ -1,1 +1,0 @@
-/home/tu03/ros2_ws/src/decision_making_pkg/setup.py

@@ -14,7 +14,8 @@ from rclpy.qos import QoSDurabilityPolicy
 from rclpy.qos import QoSReliabilityPolicy
 
 from message_filters import ApproximateTimeSynchronizer, Subscriber
-from cv_bridge import CvBridgeQoSDurCarDetectorabilityPolicy
+from cv_bridge import CvBridge
+
 
 from sensor_msgs.msg import Image
 from interfaces_pkg.msg import DetectionArray, BoundingBox2D, Detection
@@ -58,19 +59,19 @@ class CarDetector(Node):
         self.publisher = self.create_publisher(String, self.pub_topic, self.qos_profile)
 
         self.last_change_time = 0  # 마지막으로 Change를 보낸 시점
-        self.cooldown_duration = 1.5  # 쿨타임 (초 단위, 예: 5초 동안은 Change를 다시 안 보냄)
+        self.cooldown_duration = 3.5 # 쿨타임 (초 단위, 예: 5초 동안은 Change를 다시 안 보냄)
 
     
     def sync_callback(self, detection_msg: DetectionArray, image_msg: Image):
         cv_image = self.cv_bridge.imgmsg_to_cv2(image_msg)
 
         center_x_point = 340 # 차량을 인식할 화면상의 x 좌표
-        center_y_point = 200 # 차량을 인식할 화면상의 ㅛ 좌표
-        center_x_offset = 100 # 인식될 차량의 x 좌표 +-offset
+        center_y_point = 150 # 차량을 인식할 화면상의 y 좌표
+        center_x_offset = 70 # 인식될 차량의 x 좌표 +-offset
         center_y_offset = 50 # 인식될 차량의 y 좌표 +-offset
 
-        threshold_w_size = 115 # 인식될 차량의 최소 width 사이즈
-        threshold_h_size = 115
+        threshold_w_size = 90 # 인식될 차량의 최소 width 사이즈
+        threshold_h_size = 90
 
         current_time = time.time() # 현재 시간 가져오기
 
@@ -98,6 +99,11 @@ class CarDetector(Node):
                     if (current_time - self.last_change_time) > self.cooldown_duration:
                         lane_command.data = 'Change'
                         self.last_change_time = current_time
+                        self.publisher.publish(lane_command)
+                        print(lane_command.data)
+                        car_detected = True
+                        time.sleep(25.0)
+                        break        
 
                 print(car_info.data) 
                 print(lane_command.data)

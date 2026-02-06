@@ -7,7 +7,7 @@ from rclpy.qos import QoSDurabilityPolicy
 from rclpy.qos import QoSReliabilityPolicy
 
 from cv_bridge import CvBridge
-
+from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from interfaces_pkg.msg import TargetPoint, LaneInfo, DetectionArray, BoundingBox2D, Detection
 from .lib import camera_perception_func_lib as CPFL
@@ -48,15 +48,15 @@ class Yolov8InfoExtractor(Node):
 
         # ROI 이미지 퍼블리셔 추가
         self.roi_image_publisher = self.create_publisher(Image, ROI_IMAGE_TOPIC_NAME, self.qos_profile)
+            
 
     def yolov8_detections_callback(self, detection_msg: DetectionArray):
         if len(detection_msg.detections) == 0:
             return
         
         lane2_edge_image = CPFL.draw_edges(detection_msg, cls_name='lane2', color=255)
-        lane1_edge_image = CPFL.draw_edges(detection_msg, cls_name='lane1', color=255)
 
-        target_lane_edge_image = lane1_edge_image
+        target_lane_edge_image = lane2_edge_image
 
         (h, w) = (target_lane_edge_image.shape[0], target_lane_edge_image.shape[1]) #(480, 640)
         #dst_mat = [[round(w * 0.25), round(h * 0.0)], [round(w * 0.65), round(h * 0.0)], [round(w * 0.65), h], [round(w * 0.25), h]] # modified 01
@@ -87,7 +87,7 @@ class Yolov8InfoExtractor(Node):
         grad = CPFL.dominant_gradient(roi_image, theta_limit=70)
                 
         target_points = []
-        for target_point_y in range(5, 155, 30):  # 예시로 5에서 155까지 50씩 증가
+        for target_point_y in range(10, 130, 40):  # 예시로 5에서 155까지 50씩 증가
             target_point_x = CPFL.get_lane_center(roi_image, detection_height=target_point_y, 
                                                 detection_thickness=10, road_gradient=grad, lane_width=300)
             
@@ -101,7 +101,6 @@ class Yolov8InfoExtractor(Node):
         lane.target_points = target_points
 
         self.publisher.publish(lane)
-
 
 def main(args=None):
     rclpy.init(args=args)
