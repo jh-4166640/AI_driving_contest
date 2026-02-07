@@ -25,6 +25,7 @@ setup(
             'traffic_light_detector_node = camera_perception_pkg.traffic_light_detector_node:main',
             'lane_info_extractor_node = camera_perception_pkg.lane_info_extractor_node:main',
             'car_detector_node = camera_perception_pkg.car_detector_node:main',
+            'parking_car_detector_node = camera_perception_pkg.parking_car_detector_node:main',
         ],
     },
 )

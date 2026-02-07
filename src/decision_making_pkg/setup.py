@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'obstacle_motion_planner_node = decision_making_pkg.obstacle_motion_planner_node:main',
+            'parking_motion_planner_node = decision_making_pkg.parking_motion_planner_node:main',
             'motion_planner_node = decision_making_pkg.motion_planner_node:main',
             'path_planner_node = decision_making_pkg.path_planner_node:main',
         ],

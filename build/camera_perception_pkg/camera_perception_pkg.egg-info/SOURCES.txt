@@ -12,6 +12,7 @@ camera_perception_pkg/__init__.py
 camera_perception_pkg/car_detector_node.py
 camera_perception_pkg/image_publisher_node.py
 camera_perception_pkg/lane_info_extractor_node.py
+camera_perception_pkg/parking_car_detector_node.py
 camera_perception_pkg/traffic_light_detector_node.py
 camera_perception_pkg/yolov8_node.py
 camera_perception_pkg/lib/__init__.py
