@@ -56,10 +56,7 @@ class CarDetector(Node):
         # motion_sub에 별도의 콜백 등록
         self.motion_sub = self.create_subscription(
             String, self.sub_motions_topic, self.motion_callback, self.qos_profile)
-        
-        # Synchronizer는 메시지 필터 서브스크라이버만 사용 (2개)
-        self.ts = ApproximateTimeSynchronizer([self.detection_sub, self.image_sub], queue_size=1, slop=0.5)
-        self.ts.registerCallback(self.sync_callback)
+    
 
         self.detection_sub = Subscriber(self, DetectionArray, self.sub_detection_topic, qos_profile=self.qos_profile)
         self.image_sub = Subscriber(self, Image, self.sub_image_topic, qos_profile=self.qos_profile)
@@ -71,6 +68,8 @@ class CarDetector(Node):
         
         self.init_motion = False
         self.finded_parking = False
+
+        print("I'm ready to detect parking car after receiving start signal")
 
     def motion_callback(self, msg):
         # start 신호가 오면 플래그를 True로 변경

@@ -11,6 +11,7 @@ setup.py
 decision_making_pkg/__init__.py
 decision_making_pkg/motion_planner_node.py
 decision_making_pkg/obstacle_motion_planner_node.py
+decision_making_pkg/parking_motion_planner_node.py
 decision_making_pkg/path_planner_node.py
 decision_making_pkg/lib/__init__.py
 decision_making_pkg/lib/decision_making_function_lib.py

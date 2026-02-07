@@ -27,6 +27,7 @@ from .lib import camera_perception_func_lib as CPFL
 # Subscribe할 토픽 이름
 SUB_DETECTION_TOPIC_NAME = "detections"
 SUB_IMAGE_TOPIC_NAME = "image_raw"
+SUB_MOTIONS_TOPIC_NAME = "moves"
 
 # Publish할 토픽 이름
 PUB_TOPIC_NAME = "yolov8_parking_info"
@@ -40,6 +41,7 @@ class CarDetector(Node):
 
         self.sub_detection_topic = self.declare_parameter('sub_detection_topic', SUB_DETECTION_TOPIC_NAME).value
         self.sub_image_topic = self.declare_parameter('sub_image_topic', SUB_IMAGE_TOPIC_NAME).value
+        self.sub_motions_topic = self.declare_parameter('sub_moves_topic', SUB_MOTIONS_TOPIC_NAME).value
         self.pub_topic = self.declare_parameter('pub_topic', PUB_TOPIC_NAME).value
 
         self.cv_bridge = CvBridge()
@@ -51,6 +53,11 @@ class CarDetector(Node):
             depth=1
         )
 
+        # motion_sub에 별도의 콜백 등록
+        self.motion_sub = self.create_subscription(
+            String, self.sub_motions_topic, self.motion_callback, self.qos_profile)
+    
+
         self.detection_sub = Subscriber(self, DetectionArray, self.sub_detection_topic, qos_profile=self.qos_profile)
         self.image_sub = Subscriber(self, Image, self.sub_image_topic, qos_profile=self.qos_profile)
         self.ts = ApproximateTimeSynchronizer([self.detection_sub, self.image_sub], queue_size=1, slop=0.5)
@@ -58,24 +65,22 @@ class CarDetector(Node):
 
         self.publisher = self.create_publisher(String, self.pub_topic, self.qos_profile)
 
-        self.last_change_time = 0  # 마지막으로 Change를 보낸 시점
-        self.cooldown_duration = 3.5 # 쿨타임 (초 단위, 예: 5초 동안은 Change를 다시 안 보냄)
+        
+        self.init_motion = False
         self.finded_parking = False
 
+        print("I'm ready to detect parking car after receiving start signal")
+
+    def motion_callback(self, msg):
+        # start 신호가 오면 플래그를 True로 변경
+        if msg.data == 'start':
+            if not self.init_motion:
+                self.get_logger().info("Start parking car detector")
+            self.init_motion = True
     
-    def sync_callback(self, detection_msg: DetectionArray, image_msg: Image):
-
-        """
-        scenter_x_point = 340 # 차량을 인식할 화면상의 x 좌표
-        center_y_point = 150 # 차량을 인식할 화면상의 y 좌표
-        center_x_offset = 70 # 인식될 차량의 x 좌표 +-offset
-        center_y_offset = 50 # 인식될 차량의 y 좌표 +-offset
-
-        threshold_w_size = 90 # 인식될 차량의 최소 width 사이즈
-        threshold_h_size = 90
-
-        current_time = time.time() # 현재 시간 가져오기
-        """
+    def sync_callback(self, detection_msg: DetectionArray, image_msg: Image, motion_msg: String):
+        if not self.init_motion:
+            return 
         cv_image = self.cv_bridge.imgmsg_to_cv2(image_msg)
 
         car_detected = 0
@@ -107,7 +112,7 @@ class CarDetector(Node):
 
                 parking_detected = True
                 print(parking_lot_info.data)
-                
+
 
         if car_detected == 2 and not self.finded_parking:
             # Publish 'None' if no traffic light is detected
