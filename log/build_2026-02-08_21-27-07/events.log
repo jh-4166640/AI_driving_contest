@@ -1,0 +1,9 @@
+[0.000000] (-) TimerEvent: {}
+[0.000239] (-) JobUnselected: {'identifier': 'camera_perception_pkg'}
+[0.000284] (-) JobUnselected: {'identifier': 'debug_pkg'}
+[0.000303] (-) JobUnselected: {'identifier': 'decision_making_pkg'}
+[0.000320] (-) JobUnselected: {'identifier': 'interfaces_pkg'}
+[0.000336] (-) JobUnselected: {'identifier': 'launch_pkg'}
+[0.000352] (-) JobUnselected: {'identifier': 'lidar_perception_pkg'}
+[0.000373] (-) JobUnselected: {'identifier': 'serial_communication_pkg'}
+[0.000532] (-) EventReactorShutdown: {}

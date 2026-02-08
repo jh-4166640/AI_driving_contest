@@ -72,7 +72,7 @@ class SerialSenderNode(Node):
                     
                     # 수신 데이터 로그 출력
                     self.get_logger().info(
-                        f"Distances -> LR: {dist.get('LR')} RR: {dist.get('RR')} LS: {dist.get('LS')} RS: {dist.get('RS')}"
+                        f"Distances -> LR: {dist.get('LR')} RR: {dist.get('RR')} LS: {dist.get('LS')} RS: {dist.get('RS')} BC: {dist.get('BC')} BL: {dist.get('BL')}"
                     )
             except Exception as e:
                 # 데이터가 잘리거나 깨진 경우 무시
