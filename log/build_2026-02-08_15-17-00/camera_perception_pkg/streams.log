@@ -1,0 +1,26 @@
+[1.184s] Invoking command in '/home/tu03/ros2_ws/src/camera_perception_pkg': PYTHONPATH=/home/tu03/ros2_ws/build/camera_perception_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_perception_pkg build --build-base /home/tu03/ros2_ws/build/camera_perception_pkg/build install --record /home/tu03/ros2_ws/build/camera_perception_pkg/install.log --single-version-externally-managed install_data
+[1.697s] running egg_info
+[1.699s] writing ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/PKG-INFO
+[1.699s] writing dependency_links to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/dependency_links.txt
+[1.700s] writing entry points to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/entry_points.txt
+[1.700s] writing requirements to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/requires.txt
+[1.701s] writing top-level names to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/top_level.txt
+[1.704s] reading manifest file '../../build/camera_perception_pkg/camera_perception_pkg.egg-info/SOURCES.txt'
+[1.706s] writing manifest file '../../build/camera_perception_pkg/camera_perception_pkg.egg-info/SOURCES.txt'
+[1.706s] running build
+[1.707s] running build_py
+[1.708s] running install
+[1.708s] running install_lib
+[1.711s] running install_data
+[1.712s] running install_egg_info
+[1.714s] removing '/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages/camera_perception_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.715s] Copying ../../build/camera_perception_pkg/camera_perception_pkg.egg-info to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages/camera_perception_pkg-0.0.0-py3.10.egg-info
+[1.716s] running install_scripts
+[1.740s] Installing car_detector_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[1.740s] Installing image_publisher_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[1.740s] Installing lane_info_extractor_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[1.740s] Installing parking_car_detector_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[1.741s] Installing traffic_light_detector_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[1.741s] Installing yolov8_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[1.741s] writing list of installed files to '/home/tu03/ros2_ws/build/camera_perception_pkg/install.log'
+[1.767s] Invoked command in '/home/tu03/ros2_ws/src/camera_perception_pkg' returned '0': PYTHONPATH=/home/tu03/ros2_ws/build/camera_perception_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_perception_pkg build --build-base /home/tu03/ros2_ws/build/camera_perception_pkg/build install --record /home/tu03/ros2_ws/build/camera_perception_pkg/install.log --single-version-externally-managed install_data

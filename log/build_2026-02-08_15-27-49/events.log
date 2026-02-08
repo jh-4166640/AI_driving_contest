@@ -1,0 +1,105 @@
+[0.000000] (-) TimerEvent: {}
+[0.002193] (-) JobUnselected: {'identifier': 'camera_perception_pkg'}
+[0.003497] (-) JobUnselected: {'identifier': 'debug_pkg'}
+[0.004302] (-) JobUnselected: {'identifier': 'interfaces_pkg'}
+[0.005039] (-) JobUnselected: {'identifier': 'launch_pkg'}
+[0.005210] (-) JobUnselected: {'identifier': 'lidar_perception_pkg'}
+[0.005358] (-) JobUnselected: {'identifier': 'serial_communication_pkg'}
+[0.005544] (decision_making_pkg) JobQueued: {'identifier': 'decision_making_pkg', 'dependencies': OrderedDict()}
+[0.005793] (decision_making_pkg) JobStarted: {'identifier': 'decision_making_pkg'}
+[0.097330] (-) TimerEvent: {}
+[0.198388] (-) TimerEvent: {}
+[0.299513] (-) TimerEvent: {}
+[0.400686] (-) TimerEvent: {}
+[0.501764] (-) TimerEvent: {}
+[0.603051] (-) TimerEvent: {}
+[0.704088] (-) TimerEvent: {}
+[0.805030] (-) TimerEvent: {}
+[0.906030] (-) TimerEvent: {}
+[1.007133] (-) TimerEvent: {}
+[1.108519] (-) TimerEvent: {}
+[1.209744] (-) TimerEvent: {}
+[1.310990] (-) TimerEvent: {}
+[1.412094] (-) TimerEvent: {}
+[1.513305] (-) TimerEvent: {}
+[1.614463] (-) TimerEvent: {}
+[1.715673] (-) TimerEvent: {}
+[1.816832] (-) TimerEvent: {}
+[1.918036] (-) TimerEvent: {}
+[2.019172] (-) TimerEvent: {}
+[2.120208] (-) TimerEvent: {}
+[2.221468] (-) TimerEvent: {}
+[2.322611] (-) TimerEvent: {}
+[2.423641] (-) TimerEvent: {}
+[2.524600] (-) TimerEvent: {}
+[2.625757] (-) TimerEvent: {}
+[2.727003] (-) TimerEvent: {}
+[2.828169] (-) TimerEvent: {}
+[2.929385] (-) TimerEvent: {}
+[3.030004] (-) TimerEvent: {}
+[3.130441] (-) TimerEvent: {}
+[3.230994] (-) TimerEvent: {}
+[3.331505] (-) TimerEvent: {}
+[3.432042] (-) TimerEvent: {}
+[3.532631] (-) TimerEvent: {}
+[3.633091] (-) TimerEvent: {}
+[3.733538] (-) TimerEvent: {}
+[3.834051] (-) TimerEvent: {}
+[3.934497] (-) TimerEvent: {}
+[4.035043] (-) TimerEvent: {}
+[4.135489] (-) TimerEvent: {}
+[4.236026] (-) TimerEvent: {}
+[4.336519] (-) TimerEvent: {}
+[4.437065] (-) TimerEvent: {}
+[4.537477] (-) TimerEvent: {}
+[4.637990] (-) TimerEvent: {}
+[4.738429] (-) TimerEvent: {}
+[4.838987] (-) TimerEvent: {}
+[4.939494] (-) TimerEvent: {}
+[4.965108] (decision_making_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/decision_making_pkg', 'build', '--build-base', '/home/tu03/ros2_ws/build/decision_making_pkg/build', 'install', '--record', '/home/tu03/ros2_ws/build/decision_making_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/tu03/ros2_ws/src/decision_making_pkg', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'ko:en', 'USER': 'tu03', 'LC_TIME': 'ko_KR.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tu03/ros2_ws/install/interfaces_pkg/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/tu03', 'OLDPWD': '/home/tu03', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'ko_KR.UTF-8', 'MANAGERPID': '28919', 'SYSTEMD_EXEC_PID': '29100', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '34534', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/tu03/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'tu03', 'JOURNAL_STREAM': '8:70231', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tu03', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/tu03/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tu03-Dell-G15-5520:@/tmp/.ICE-unix/29073,unix/tu03-Dell-G15-5520:/tmp/.ICE-unix/29073', 'INVOCATION_ID': 'f14415c6688a4ae593ca5062def8ac48', 'PAPERSIZE': 'a4', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'ko_KR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WG1OK3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/tu03/ros2_ws/install/serial_communication_pkg:/home/tu03/ros2_ws/install/lidar_perception_pkg:/home/tu03/ros2_ws/install/launch_pkg:/home/tu03/ros2_ws/install/interfaces_pkg:/home/tu03/ros2_ws/install/decision_making_pkg:/home/tu03/ros2_ws/install/debug_pkg:/home/tu03/ros2_ws/install/camera_perception_pkg:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:d16991ac-90f7-4110-bfae-1cf25ebd22e0', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tu03/ros2_ws/build/decision_making_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/tu03/ros2_ws/build/decision_making_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages:/home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages:/home/tu03/ros2_ws/install/lidar_perception_pkg/lib/python3.10/site-packages:/home/tu03/ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages:/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages:/home/tu03/ros2_ws/build/debug_pkg:/home/tu03/ros2_ws/install/debug_pkg/lib/python3.10/site-packages:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/tu03/ros2_ws/install/launch_pkg:/home/tu03/ros2_ws/install/interfaces_pkg'}, 'shell': False}
+[5.039727] (-) TimerEvent: {}
+[5.140250] (-) TimerEvent: {}
+[5.240824] (-) TimerEvent: {}
+[5.341327] (-) TimerEvent: {}
+[5.441832] (-) TimerEvent: {}
+[5.542227] (-) TimerEvent: {}
+[5.642733] (-) TimerEvent: {}
+[5.743119] (-) TimerEvent: {}
+[5.843631] (-) TimerEvent: {}
+[5.944068] (-) TimerEvent: {}
+[6.044539] (-) TimerEvent: {}
+[6.145058] (-) TimerEvent: {}
+[6.245606] (-) TimerEvent: {}
+[6.346037] (-) TimerEvent: {}
+[6.446506] (-) TimerEvent: {}
+[6.547098] (-) TimerEvent: {}
+[6.647668] (-) TimerEvent: {}
+[6.715883] (decision_making_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[6.716974] (decision_making_pkg) StdoutLine: {'line': b'writing ../../build/decision_making_pkg/decision_making_pkg.egg-info/PKG-INFO\n'}
+[6.717193] (decision_making_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/decision_making_pkg/decision_making_pkg.egg-info/dependency_links.txt\n'}
+[6.717690] (decision_making_pkg) StdoutLine: {'line': b'writing entry points to ../../build/decision_making_pkg/decision_making_pkg.egg-info/entry_points.txt\n'}
+[6.717927] (decision_making_pkg) StdoutLine: {'line': b'writing requirements to ../../build/decision_making_pkg/decision_making_pkg.egg-info/requires.txt\n'}
+[6.718034] (decision_making_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/decision_making_pkg/decision_making_pkg.egg-info/top_level.txt\n'}
+[6.720692] (decision_making_pkg) StdoutLine: {'line': b"reading manifest file '../../build/decision_making_pkg/decision_making_pkg.egg-info/SOURCES.txt'\n"}
+[6.722152] (decision_making_pkg) StdoutLine: {'line': b"writing manifest file '../../build/decision_making_pkg/decision_making_pkg.egg-info/SOURCES.txt'\n"}
+[6.722378] (decision_making_pkg) StdoutLine: {'line': b'running build\n'}
+[6.722485] (decision_making_pkg) StdoutLine: {'line': b'running build_py\n'}
+[6.722760] (decision_making_pkg) StdoutLine: {'line': b'copying decision_making_pkg/parking_motion_planner_node.py -> /home/tu03/ros2_ws/build/decision_making_pkg/build/lib/decision_making_pkg\n'}
+[6.723236] (decision_making_pkg) StdoutLine: {'line': b'running install\n'}
+[6.723735] (decision_making_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[6.725142] (decision_making_pkg) StdoutLine: {'line': b'copying /home/tu03/ros2_ws/build/decision_making_pkg/build/lib/decision_making_pkg/parking_motion_planner_node.py -> /home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg\n'}
+[6.726335] (decision_making_pkg) StdoutLine: {'line': b'byte-compiling /home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg/parking_motion_planner_node.py to parking_motion_planner_node.cpython-310.pyc\n'}
+[6.730627] (decision_making_pkg) StdoutLine: {'line': b'running install_data\n'}
+[6.731132] (decision_making_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[6.734475] (decision_making_pkg) StdoutLine: {'line': b"removing '/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[6.734714] (decision_making_pkg) StdoutLine: {'line': b'Copying ../../build/decision_making_pkg/decision_making_pkg.egg-info to /home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg-0.0.0-py3.10.egg-info\n'}
+[6.735278] (decision_making_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[6.747925] (-) TimerEvent: {}
+[6.774274] (decision_making_pkg) StdoutLine: {'line': b'Installing motion_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg\n'}
+[6.774847] (decision_making_pkg) StdoutLine: {'line': b'Installing obstacle_motion_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg\n'}
+[6.775495] (decision_making_pkg) StdoutLine: {'line': b'Installing parking_motion_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg\n'}
+[6.775653] (decision_making_pkg) StdoutLine: {'line': b'Installing path_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg\n'}
+[6.775774] (decision_making_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/tu03/ros2_ws/build/decision_making_pkg/install.log'\n"}
+[6.825087] (decision_making_pkg) CommandEnded: {'returncode': 0}
+[6.843484] (decision_making_pkg) JobEnded: {'identifier': 'decision_making_pkg', 'rc': 0}
+[6.844907] (-) EventReactorShutdown: {}

@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
 			'serial_sender_node = serial_communication_pkg.serial_sender_node:main',
+            'parking_serial_sender_node = serial_communication_pkg.parking_serial_sender_node:main',
         ],
     },
 )

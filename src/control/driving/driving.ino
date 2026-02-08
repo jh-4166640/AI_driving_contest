@@ -2,20 +2,20 @@
 const unsigned int MAX_INPUT = 15;
 
 // 핀 번호 변수
-const int STEERING_1 = 2x;
-const int STEERING_2 = 3;
-const int FORWARD_RIGHT_1 = 4;
-const int FORWARD_RIGHT_2 = 5;
-const int FORWARD_LEFT_1 = 6;
-const int FORWARD_LEFT_2 =7;
-const int POT = A2;
+const int STEERING_1 = 12;
+const int STEERING_2 = 13;
+const int FORWARD_RIGHT_1 = 10;
+const int FORWARD_RIGHT_2 = 11;
+const int FORWARD_LEFT_1 = 8;
+const int FORWARD_LEFT_2 =9;
+const int POT = A0;
 
 // 조향 속도 상수
-const int STEERING_SPEED = 128;
+const int STEERING_SPEED = 160;
 
 // 가변저항 값 범위
-const int resistance_most_left = 535;
-const int resistance_most_right = 375;
+const int resistance_most_left = 574+15;
+const int resistance_most_right = 440-15;
 
 // 조향 최대 단계 수 (한 쪽 기준)
 const int MAX_STEERING_STEP = 7;
@@ -27,6 +27,7 @@ int left_speed = 0, right_speed = 0;
 // 명령 주기 제한 변수
 unsigned long lastCommandTime = 0; // 마지막 명령 처리 시간
 const unsigned int COMMAND_INTERVAL = 50; // 명령 처리 간 최소 대기 시간(ms)
+int potValue = 0;    // Variable to store the reading
 
 // 함수 선언
 void steerRight();
@@ -39,7 +40,6 @@ void processData(const char *data);
 
 void setup() {
     Serial.begin(115200);
-
     // 핀 모드 설정
     pinMode(POT, INPUT);
     pinMode(STEERING_1, OUTPUT);
@@ -73,6 +73,9 @@ void loop() {
         } else {
             steerRight();
         }
+        //potValue = analogRead(POT);  // Read value (0–1023)
+        //Serial.println(potValue);
+        //Serial.println(mapped_resistance);
 
         // 모터 속도 설정
         setLeftMotorSpeed(left_speed);

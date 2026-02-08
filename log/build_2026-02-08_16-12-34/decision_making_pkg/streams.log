@@ -1,0 +1,27 @@
+[1.695s] Invoking command in '/home/tu03/ros2_ws/src/decision_making_pkg': PYTHONPATH=/home/tu03/ros2_ws/build/decision_making_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/decision_making_pkg build --build-base /home/tu03/ros2_ws/build/decision_making_pkg/build install --record /home/tu03/ros2_ws/build/decision_making_pkg/install.log --single-version-externally-managed install_data
+[2.218s] running egg_info
+[2.219s] writing ../../build/decision_making_pkg/decision_making_pkg.egg-info/PKG-INFO
+[2.219s] writing dependency_links to ../../build/decision_making_pkg/decision_making_pkg.egg-info/dependency_links.txt
+[2.220s] writing entry points to ../../build/decision_making_pkg/decision_making_pkg.egg-info/entry_points.txt
+[2.220s] writing requirements to ../../build/decision_making_pkg/decision_making_pkg.egg-info/requires.txt
+[2.220s] writing top-level names to ../../build/decision_making_pkg/decision_making_pkg.egg-info/top_level.txt
+[2.223s] reading manifest file '../../build/decision_making_pkg/decision_making_pkg.egg-info/SOURCES.txt'
+[2.225s] writing manifest file '../../build/decision_making_pkg/decision_making_pkg.egg-info/SOURCES.txt'
+[2.225s] running build
+[2.225s] running build_py
+[2.225s] copying decision_making_pkg/parking_motion_planner_node.py -> /home/tu03/ros2_ws/build/decision_making_pkg/build/lib/decision_making_pkg
+[2.226s] running install
+[2.227s] running install_lib
+[2.228s] copying /home/tu03/ros2_ws/build/decision_making_pkg/build/lib/decision_making_pkg/parking_motion_planner_node.py -> /home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg
+[2.230s] byte-compiling /home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg/parking_motion_planner_node.py to parking_motion_planner_node.cpython-310.pyc
+[2.234s] running install_data
+[2.234s] running install_egg_info
+[2.239s] removing '/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[2.239s] Copying ../../build/decision_making_pkg/decision_making_pkg.egg-info to /home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages/decision_making_pkg-0.0.0-py3.10.egg-info
+[2.240s] running install_scripts
+[2.280s] Installing motion_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg
+[2.280s] Installing obstacle_motion_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg
+[2.280s] Installing parking_motion_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg
+[2.281s] Installing path_planner_node script to /home/tu03/ros2_ws/install/decision_making_pkg/lib/decision_making_pkg
+[2.281s] writing list of installed files to '/home/tu03/ros2_ws/build/decision_making_pkg/install.log'
+[2.325s] Invoked command in '/home/tu03/ros2_ws/src/decision_making_pkg' returned '0': PYTHONPATH=/home/tu03/ros2_ws/build/decision_making_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/decision_making_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/decision_making_pkg build --build-base /home/tu03/ros2_ws/build/decision_making_pkg/build install --record /home/tu03/ros2_ws/build/decision_making_pkg/install.log --single-version-externally-managed install_data

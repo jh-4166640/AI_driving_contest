@@ -1,0 +1,29 @@
+[0.535s] Invoking command in '/home/tu03/ros2_ws/src/camera_perception_pkg': PYTHONPATH=/home/tu03/ros2_ws/build/camera_perception_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_perception_pkg build --build-base /home/tu03/ros2_ws/build/camera_perception_pkg/build install --record /home/tu03/ros2_ws/build/camera_perception_pkg/install.log --single-version-externally-managed install_data
+[0.752s] running egg_info
+[0.753s] writing ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/PKG-INFO
+[0.753s] writing dependency_links to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/dependency_links.txt
+[0.753s] writing entry points to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/entry_points.txt
+[0.753s] writing requirements to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/requires.txt
+[0.753s] writing top-level names to ../../build/camera_perception_pkg/camera_perception_pkg.egg-info/top_level.txt
+[0.754s] reading manifest file '../../build/camera_perception_pkg/camera_perception_pkg.egg-info/SOURCES.txt'
+[0.755s] writing manifest file '../../build/camera_perception_pkg/camera_perception_pkg.egg-info/SOURCES.txt'
+[0.755s] running build
+[0.755s] running build_py
+[0.756s] copying camera_perception_pkg/parking_car_detector_node.py -> /home/tu03/ros2_ws/build/camera_perception_pkg/build/lib/camera_perception_pkg
+[0.756s] running install
+[0.756s] running install_lib
+[0.757s] copying /home/tu03/ros2_ws/build/camera_perception_pkg/build/lib/camera_perception_pkg/parking_car_detector_node.py -> /home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages/camera_perception_pkg
+[0.758s] byte-compiling /home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages/camera_perception_pkg/parking_car_detector_node.py to parking_car_detector_node.cpython-310.pyc
+[0.759s] running install_data
+[0.759s] running install_egg_info
+[0.760s] removing '/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages/camera_perception_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.760s] Copying ../../build/camera_perception_pkg/camera_perception_pkg.egg-info to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages/camera_perception_pkg-0.0.0-py3.10.egg-info
+[0.761s] running install_scripts
+[0.777s] Installing car_detector_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[0.778s] Installing image_publisher_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[0.778s] Installing lane_info_extractor_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[0.778s] Installing parking_car_detector_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[0.778s] Installing traffic_light_detector_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[0.778s] Installing yolov8_node script to /home/tu03/ros2_ws/install/camera_perception_pkg/lib/camera_perception_pkg
+[0.778s] writing list of installed files to '/home/tu03/ros2_ws/build/camera_perception_pkg/install.log'
+[0.798s] Invoked command in '/home/tu03/ros2_ws/src/camera_perception_pkg' returned '0': PYTHONPATH=/home/tu03/ros2_ws/build/camera_perception_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/camera_perception_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_perception_pkg build --build-base /home/tu03/ros2_ws/build/camera_perception_pkg/build install --record /home/tu03/ros2_ws/build/camera_perception_pkg/install.log --single-version-externally-managed install_data
