@@ -20,7 +20,7 @@ TARGET_SLOPE_TOPIC_NAME = "target_slope"
 #----------------------------------------------
 
 # 모션 플랜 발행 주기 (초) - 소수점 필요 (int형은 반영되지 않음)
-TIMER = 0.1
+TIMER = 0.02
 
 class MotionPlanningNode(Node):
     def __init__(self):

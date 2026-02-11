@@ -66,7 +66,7 @@ class CarDetector(Node):
         cv_image = self.cv_bridge.imgmsg_to_cv2(image_msg)
 
         center_x_point = 340 # 차량을 인식할 화면상의 x 좌표
-        center_y_point = 150 # 차량을 인식할 화면상의 y 좌표
+        center_y_point = 190 # 차량을 인식할 화면상의 y 좌표
         center_x_offset = 70 # 인식될 차량의 x 좌표 +-offset
         center_y_offset = 50 # 인식될 차량의 y 좌표 +-offset
 

@@ -9,7 +9,7 @@ from std_msgs.msg import Float32
 from std_msgs.msg import String, Bool
 from interfaces_pkg.msg import PathPlanningResult, DetectionArray, MotionCommand
 from .lib import decision_making_func_lib as DMFL
-
+from rclpy.duration import Duration # 파일 맨 위에 import 필요
 import time
 
 #---------------Variable Setting---------------
@@ -22,7 +22,7 @@ TARGET_SLOPE_TOPIC_NAME = "target_slope"
 #----------------------------------------------
 
 # 모션 플랜 발행 주기 (초) - 소수점 필요 (int형은 반영되지 않음)
-TIMER = 0.1
+TIMER = 0.02
 
 class MotionPlanningNode(Node):
     def __init__(self):
@@ -57,7 +57,8 @@ class MotionPlanningNode(Node):
         self.steering_command = 0
         self.left_speed_command = 0
         self.right_speed_command = 0
-        
+        self.change_flg = False
+        self.first = True
 
         # 서브스크라이버 설정
         self.detection_sub = self.create_subscription(DetectionArray, self.sub_detection_topic, self.detection_callback, self.qos_profile)
@@ -76,6 +77,8 @@ class MotionPlanningNode(Node):
         self.target_slope_pub = self.create_publisher(Float32, self.target_slope_topic, self.qos_profile)
         # 타이머 설정
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
+        self.std_time = None
+        self.steps = 0
 
     def detection_callback(self, msg: DetectionArray):
         self.detection_data = msg
@@ -91,10 +94,12 @@ class MotionPlanningNode(Node):
 
     def obstacle_callback(self, detected_msg):
         # 로그를 찍어 실제 메시지가 오는지 확인
-        self.get_logger().info(f'Received obstacle info: {detected_msg.data}')
+        #self.get_logger().info(f'Received obstacle info: {detected_msg.data}')
         if detected_msg.data == 'Change':
             self.obstacle_data = detected_msg.data
             self.get_logger().warn('!!! Lane Change Flag Set !!!')
+            
+            
 
     def timer_callback(self):
 
@@ -109,111 +114,29 @@ class MotionPlanningNode(Node):
         elif self.traffic_light_data is not None and self.traffic_light_data.data == 'Red':
             # 빨간색 신호등을 감지한 경우
             for detection in self.detection_data.detections:
-                if detection.class_name=='traffic_light':
+                if detection.class_name=='traffic_iight':
                     x_min = int(detection.bbox.center.position.x - detection.bbox.size.x / 2) # bbox의 좌측상단 꼭짓점 x좌표
                     x_max = int(detection.bbox.center.position.x + detection.bbox.size.x / 2) # bbox의 우측하단 꼭짓점 x좌표
                     y_min = int(detection.bbox.center.position.y - detection.bbox.size.y / 2) # bbox의 좌측상단 꼭짓점 y좌표
                     y_max = int(detection.bbox.center.position.y + detection.bbox.size.y / 2) # bbox의 우측하단 꼭짓점 y좌표
+                    print(f"y_max : {y_max}")
 
-                    if y_max < 200: # 150 -> 200 수정
-                        # 신호등 위치에 따른 정지명령 결정
+                    if y_max > 20 and y_max < 100: # 150 -> 200 수정
+                        # 신호등 위치에 따른 정지명령 결정 
                         self.steering_command = 0 
                         self.left_speed_command = 0 
                         self.right_speed_command = 0
+                        print("stop")
 
 
-        elif self.obstacle_data is not None and self.obstacle_data == 'Change':
-            # 장애물로 인해 차선 변경이 필요한 경우
-            self.get_logger().warn('!!! Executing Lane Change Maneuver !!!')
-            # 차선 변경 로직 구현 (예: 조향 각도 및 속도 설정)
-            self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            # 차선 변경 후 플래그 초기화
-            self.obstacle_data = None
-            self.get_logger().info(f"steering: {self.steering_command}, " 
-                               f"left_speed: {self.left_speed_command}, " 
-                               f"right_speed: {self.right_speed_command}")
-
-            # 모션 명령 메시지 생성 및 퍼블리시
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-            time.sleep(3.3)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
-
-            self.steering_command = 7  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            # 차선 변경 후 플래그 초기화
-            self.obstacle_data = None
-            self.get_logger().info(f"steering: {self.steering_command}, " 
-                               f"left_speed: {self.left_speed_command}, " 
-                               f"right_speed: {self.right_speed_command}")
-
-            # 모션 명령 메시지 생성 및 퍼블리시
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-            time.sleep(3.3)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
-
-            self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            # 차선 변경 후 플래그 초기화
-            self.obstacle_data = None
-            self.get_logger().info(f"steering: {self.steering_command}, " 
-                               f"left_speed: {self.left_speed_command}, " 
-                               f"right_speed: {self.right_speed_command}")
-
-            # 모션 명령 메시지 생성 및 퍼블리시
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-            time.sleep(2.0)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
-
-            self.steering_command = 7  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            # 차선 변경 후 플래그 초기화
-            self.obstacle_data = None
-            self.get_logger().info(f"steering: {self.steering_command}, " 
-                               f"left_speed: {self.left_speed_command}, " 
-                               f"right_speed: {self.right_speed_command}")
-
-            # 모션 명령 메시지 생성 및 퍼블리시
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-            time.sleep(2.2)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
-
-
-            self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-            # 차선 변경 후 플래그 초기화
-            self.obstacle_data = None
-            self.get_logger().info(f"steering: {self.steering_command}, " 
-                               f"left_speed: {self.left_speed_command}, " 
-                               f"right_speed: {self.right_speed_command}")
-
-            # 모션 명령 메시지 생성 및 퍼블리시
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-            time.sleep(2.5)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
-
-            self.get_logger().info(f"change end!!!!!")
-            
+        elif (self.obstacle_data is not None and self.obstacle_data == 'Change') or self.change_flg == True:
+        #elif (self.obstacle_data is not None and self.obstacle_data == 'Change'):
+            if self.first == True : 
+                self.std_time = self.get_clock().now()
+                self.first = False
+            self.change_flg = True
+            self.change_motion()
+            #self.change_motion_delay()
 
         else:
             if self.path_data is None:
@@ -228,35 +151,6 @@ class MotionPlanningNode(Node):
 
                 self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
                 self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
-
-                # if target_slope < 0:
-                #     if 0> target_slope >= -10:
-                #         self.steering_command = 0# 예시 조향 값 (7이 최대 조향)
-                #     elif -10 > target_slope >= -15:
-                #         self.steering_command = -2
-                #     elif -15 > target_slope >= -40:
-                #         self.steering_command = -4
-                #     elif -40 > target_slope >= -60:
-                #         self.steering_command = -6
-                #     elif -60 > target_slope:
-                #         self.steering_command = -7         
-                #     else:
-                #         self.steering_command = 0
-                # elif target_slope > 0:
-                #     if 0 < target_slope <= 10:
-                #         self.steering_command = 0# 예시 조향 값 (7이 최대 조향)
-                #     elif 10 < target_slope <= 15:
-                #         self.steering_command = 2
-                #     elif 15 < target_slope <= 40:
-                #         self.steering_command = 4
-                #     elif 40 < target_slope <= 60:
-                #         self.steering_command = 6
-                #     elif 60 < target_slope:
-                #         self.steering_command = 7         
-                #     else:
-                #         self.steering_command = 0
-                # else :
-                #     self.steering_command = 0
 
                 if target_slope < 0 :  # left
                     if 0 > target_slope >= -5:
@@ -300,56 +194,11 @@ class MotionPlanningNode(Node):
                 else :
                     self.steering_command = 0    
                 
-                
-                    
-                """
-                flag = 1
-                if(target_slope < 0):
-                    flag = -1
-                target_slope = abs(target_slope)
-
-                print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
-                print(target_slope)
-                print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2")
-
-                if 0 < target_slope <= 5:
-                    self.steering_command = 0# 예시 조향 값 (7이 최대 조향)
-                elif 5 < target_slope <= 10:
-                    self.steering_command = 0
-                elif 10 < target_slope <= 15:
-                    self.steering_command = 1
-                elif 15 < target_slope <= 20:
-                    self.steering_command = 2
-                elif 20 < target_slope <= 50:
-                    self.steering_command = 3 
-                elif 50 < target_slope <= 60:
-                    self.steering_command = 4 
-                elif 60 < target_slope <= 65:
-                    self.steering_command = 5
-                elif 65 < target_slope:
-                    self.steering_command = 7           
-                else:
-                    self.steering_command = 0
-
-                self.steering_command = self.steering_command * flag
-
-                self.left_speed_command = 255  # 예시 속도 값 (255가 최대 속도)
-                self.right_speed_command = 255  # 예시 속도 값 (255가 최대 속도)
-
-            
-                # if target_slope > 0:
-                #     self.steering_command =  3 # 예시 조향 값 (7이 최대 조향) 
-                # elif target_slope < 0:
-                #     self.steering_command =  -7
-                # else:
-                #     self.steering_command = 0
-
-                """
 
 
         self.get_logger().info(f"steering: {self.steering_command}, " 
-                               f"left_speed: {self.left_speed_command}, " 
-                               f"right_speed: {self.right_speed_command}")
+                            f"left_speed: {self.left_speed_command}, " 
+                            f"right_speed: {self.right_speed_command}")
 
         # 모션 명령 메시지 생성 및 퍼블리시
         motion_command_msg = MotionCommand()
@@ -357,6 +206,171 @@ class MotionPlanningNode(Node):
         motion_command_msg.left_speed = self.left_speed_command
         motion_command_msg.right_speed = self.right_speed_command
         self.publisher.publish(motion_command_msg)
+    
+    def change_motion_delay(self):
+
+        self.get_logger().warn('!!! Executing Lane Change Maneuver !!!')
+        # 차선 변경 로직 구현 (예: 조향 각도 및 속도 설정)
+        self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+        self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        # 차선 변경 후 플래그 초기화
+        self.obstacle_data = None
+        self.get_logger().info(f"steering: {self.steering_command}, " 
+                            f"left_speed: {self.left_speed_command}, " 
+                            f"right_speed: {self.right_speed_command}")
+
+        # 모션 명령 메시지 생성 및 퍼블리시
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
+        time.sleep(2.8)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
+
+        self.steering_command = 7  # 예시 조향 값 (7이 최대 조향)
+        self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        # 차선 변경 후 플래그 초기화
+        self.obstacle_data = None
+        self.get_logger().info(f"steering: {self.steering_command}, " 
+                            f"left_speed: {self.left_speed_command}, " 
+                            f"right_speed: {self.right_speed_command}")
+
+        # 모션 명령 메시지 생성 및 퍼블리시
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
+        time.sleep(2.8)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
+
+        self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
+        self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        # 차선 변경 후 플래그 초기화
+        self.obstacle_data = None
+        self.get_logger().info(f"steering: {self.steering_command}, " 
+                            f"left_speed: {self.left_speed_command}, " 
+                            f"right_speed: {self.right_speed_command}")
+
+        # 모션 명령 메시지 생성 및 퍼블리시
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
+        time.sleep(2.0)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
+
+        self.steering_command = 7  # 예시 조향 값 (7이 최대 조향)
+        self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        # 차선 변경 후 플래그 초기화
+        self.obstacle_data = None
+        self.get_logger().info(f"steering: {self.steering_command}, " 
+                            f"left_speed: {self.left_speed_command}, " 
+                            f"right_speed: {self.right_speed_command}")
+
+        # 모션 명령 메시지 생성 및 퍼블리시
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
+        time.sleep(2.2)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
+
+
+        self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+        self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+        # 차선 변경 후 플래그 초기화
+        self.obstacle_data = None
+        self.get_logger().info(f"steering: {self.steering_command}, " 
+                            f"left_speed: {self.left_speed_command}, " 
+                            f"right_speed: {self.right_speed_command}")
+
+        # 모션 명령 메시지 생성 및 퍼블리시
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
+        time.sleep(2.5)  # 차선 변경 동작을 위한 대기 시간 (필요에 따라 조정)
+        self.change_flg=False
+
+        self.get_logger().info(f"change end!!!!!")
+
+    def change_motion(self):
+        cur_time = parking_cur_time = self.get_clock().now()
+        if self.steps == 0:
+            if (cur_time - self.std_time) > Duration(seconds = 3.0):
+                self.steps = self.steps + 1
+                self.std_time = self.get_clock().now()
+                self.get_logger().warn('!!! Next step 11111111111111111111 !!!')
+
+            # 차선 변경 로직 구현 (예: 조향 각도 및 속도 설정)
+            self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            
+            
+        elif self.steps == 1:
+            if (cur_time - self.std_time) > Duration(seconds = 3.0):
+                self.steps = self.steps + 1
+                self.std_time = self.get_clock().now()
+                self.get_logger().warn('!!! Next step 22222222222222222222 !!!')
+
+            self.steering_command = 7  # 예시 조향 값 (7이 최대 조향)
+            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            
+        elif self.steps == 2:
+            if (cur_time - self.std_time) > Duration(seconds = 0.8):
+                self.steps = self.steps + 1
+                self.std_time = self.get_clock().now()
+                self.get_logger().warn('!!! Next step 33333333333333333333 !!!')
+
+            self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
+            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            # 차선 변경 후 플래그 초기화
+
+        elif self.steps == 3:
+            if (cur_time - self.std_time) > Duration(seconds = 2.9):
+                self.steps = self.steps + 1
+                self.std_time = self.get_clock().now()
+                self.get_logger().warn('!!! Next step 444444444444444444444 !!!')
+
+            self.steering_command = 7  # 예시 조향 값 (7이 최대 조향)
+            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+
+        elif self.steps == 4:
+            if (cur_time - self.std_time) > Duration(seconds = 2.9):
+                self.steps = self.steps + 1
+                self.std_time = self.get_clock().now()
+                self.get_logger().info(f"change end!!!!!")
+                self.obstacle_data = None
+                self.change_flg=False
+            self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+            self.left_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+            self.right_speed_command = 140  # 예시 속도 값 (255가 최대 속도)
+
+        
+
+        # self.get_logger().info(f"steering: {self.steering_command}, " 
+        #                        f"left_speed: {self.left_speed_command}, " 
+        #                        f"right_speed: {self.right_speed_command}")
+        # 모션 명령 메시지 생성 및 퍼블리시
+        # motion_command_msg = MotionCommand()
+        # motion_command_msg.steering = self.steering_command
+        # motion_command_msg.left_speed = self.left_speed_command
+        # motion_command_msg.right_speed = self.right_speed_command
+        # self.publisher.publish(motion_command_msg)
+        
+            
+        
+        
 
 def main(args=None):
     rclpy.init(args=args)
@@ -371,3 +385,11 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
+
+
+
+"""
+# 장애물로 인해 차선 변경이 필요한 경우
+            
+"""

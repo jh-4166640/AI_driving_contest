@@ -5,6 +5,7 @@ from rclpy.qos import QoSProfile
 from rclpy.qos import QoSHistoryPolicy
 from rclpy.qos import QoSDurabilityPolicy
 from rclpy.qos import QoSReliabilityPolicy
+from rclpy.duration import Duration # 파일 맨 위에 import 필요
 from std_msgs.msg import Float32
 from std_msgs.msg import String, Bool
 from interfaces_pkg.msg import PathPlanningResult, DetectionArray, MotionCommand
@@ -92,10 +93,20 @@ class MotionPlanningNode(Node):
         self.bc = 999
         self.bl = 999
 
+        self.parking_time = None
+
         self.steps = 0
+        self.steps2 = 0
+
+        # # go out test init
+        # self.Init_motion = True
+        # self.parking_located = True
+        # self.parking_completed=True
+        # ########
 
         self.backP = False
-        time.sleep(3.0)
+        self.std_time = None
+        time.sleep(1.5)
         
 
 
@@ -173,7 +184,6 @@ class MotionPlanningNode(Node):
 
             self.get_logger().info(f"Start parking motion initialization")
 
-
             
             self.Motion_function(7,140,1.8)
             self.Motion_function(-7,140,6.2)
@@ -209,77 +219,268 @@ class MotionPlanningNode(Node):
         elif self.parking_located == True and self.parking_completed == False:
             #self.get_logger().info(f"Parking process started, parking side: {self.parking_car_data.data}")
             if self.parking_lot_located == "R":
-                if self.steps == 0:
-                    #if (self.bl > 47 and self.lr > 47 and self.bl <90 and self.lr < 90) or (self.lr > 90 and self.bl > 90):
-                    if (self.lr > 110 and self.bl > 110):
-                        self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
-                        self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
-                        self.right_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
-                        self.steps= self.steps+1
-                        self.get_logger().info(f"Next step 111111111")
-                        self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
-                    else:   
-                        self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
-                        self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
-                        self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
-                    
-                    
-                elif self.steps == 1:
-                    if self.bc > 150:
-                        self.steering_command = 2  # 예시 조향 값 (7이 최대 조향)
-                        self.left_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
-                        self.right_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
-                    else:
-                        if self.bl > 150:
-                            self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
-                            self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
-                            self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
-                            self.steps= self.steps+1
-                            self.get_logger().info(f"Next step 22222222")
-                            self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
-                        else :
-                            self.steering_command = 2  # 예시 조향 값 (7이 최대 조향)
-                            self.left_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
-                            self.right_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+                self.Right_parking_process()
+                
+            elif self.parking_lot_located == "L":
+                self.Left_parking_process()
+                
+        
+        elif self.parking_completed == True:
+            parking_cur_time = self.get_clock().now()
+            if (parking_cur_time - self.parking_time > Duration(seconds=5.0)):
+                self.go_out_line()
+            
+            
+            
+    def Left_parking_process(self):
+        #self.get_logger().info(f"Left parking process")
+        if self.steps == 0:
+            #if ((self.rr > 150 and self.bl > 115 and self.bl < 200) or (self.rr > 150 and self.bl > 300 and self.bc > 300)):
+            if self.bc > 150 and self.bl > 150 and self.rr >300:
+                self.steering_command = 4
+                self.left_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+                self.steps= self.steps+1
+                self.get_logger().info(f"Next step 111111111")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+                
+            else :
+                self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+
+        elif self.steps == 1:
+            if self.ls < 100:
+                self.steering_command = 0
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.steps= self.steps+1
+                self.get_logger().info(f"Next step 22222222222")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+
+            else :
+                self.steering_command = 4
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                
+        elif self.steps == 2:
+            if self.bc > 65 :
+                self.steering_command = 0
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+            else:
+                self.steering_command = 4  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.steps= self.steps+1
+                self.get_logger().info(f"Next step 33333333")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+                
+        elif self.steps == 3:
+            if self.bc > 170:
+
+                self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+                self.steps= self.steps+1
+                self.get_logger().info(f"Next step 444444444")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+            
+            else :
+                self.steering_command = 4  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+
+        elif self.steps == 4:
+            if self.bc > 145:
+                self.get_logger().info(f"Bc :{self.bc}")
+                self.steering_command = 0   # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+
+            elif self.rs < 60 and self.rr < 65 and self.ls > 30:
+                self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.steps= self.steps+1
+                self.get_logger().info(f"Next step 555555555")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+            
+            elif self.rr > 100 and self.lr > 100 and (self.ls < 80 or self.rs <80):
+                self.steering_command = 0  # 예시 조향 값 (7이
+                self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 0  # 예시 속도 값 (255가 최대
+                self.parking_completed = True
+                self.parking_time = self.get_clock().now()
+                self.steps = self.steps+5
+                self.get_logger().info(f"===============Finish!!==================")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+
+            else :
+                self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)\
+
+        elif self.steps == 5:
+            if self.rr > 100 and self.lr > 100:
+                self.steering_command = 0  # 예시 조향 값 (7이
+                self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 0  # 예시 속도 값 (255가 최대
+                self.parking_completed = True
+                self.parking_time = self.get_clock().now()
+                self.steps = self.steps+1
+                self.get_logger().info(f"===============Finish!!==================")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+
+            else : 
+                self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
 
                 
-                elif self.steps == 2:   
-                    if self.rs < 100 and self.rr < 65:
-                        self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
-                        self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
-                        self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
-                        self.steps= self.steps+1
-                        self.get_logger().info(f"Next step 3333333333")
-                        self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
-                        
-                    else :
-                        self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
-                        self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
-                        self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
-                        
 
-                elif self.steps == 3:
-                    if self.rr > 100 and self.lr > 100 and self.ls < 80 and self.rs <80:
-                        self.steering_command = 0  # 예시 조향 값 (7이
-                        self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
-                        self.right_speed_command = 0  # 예시 속도 값 (255가 최대
-                        self.parking_completed = True
-                        self.steps = self.steps+1
-                        self.get_logger().info(f"===============Finish!!==================")
-                        self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+    def Right_parking_process(self):
+        #self.get_logger().info(f"Right parking process")
+        if self.steps == 0:
+            #if (self.bl > 47 and self.lr > 47 and self.bl <90 and self.lr < 90) or (self.lr > 90 and self.bl > 90):
+            if (self.lr > 118 and self.bl > 118):
+                self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                self.steps= self.steps+1
+                self.get_logger().info(f"Next step 111111111")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+            else:   
+                self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+            
+            
+        elif self.steps == 1:
+            if self.bc > 170:
+                self.steering_command = 2  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+            else:
+                if self.bl > 120: # 150 -> 140
+                    self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                    self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                    self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                    self.steps= self.steps+1
+                    self.get_logger().info(f"Next step 22222222")
+                    self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
 
-                    else : 
-                        self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
-                        self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
-                        self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                    # self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                    # self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                    # self.right_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                    # motion_command_msg = MotionCommand()
+                    # motion_command_msg.steering = self.steering_command
+                    # motion_command_msg.left_speed = self.left_speed_command
+                    # motion_command_msg.right_speed = self.right_speed_command
+                    # self.publisher.publish(motion_command_msg)
+                    # time.sleep(10.0)
 
-                    
-                        
-                motion_command_msg = MotionCommand()
-                motion_command_msg.steering = self.steering_command
-                motion_command_msg.left_speed = self.left_speed_command
-                motion_command_msg.right_speed = self.right_speed_command
-                self.publisher.publish(motion_command_msg)
+                else :
+                    self.steering_command = 2  # 예시 조향 값 (7이 최대 조향)
+                    self.left_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+                    self.right_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
+
+
+        elif self.steps == 2:   
+            if self.rs < 100 and self.rr < 65:
+                self.steering_command = -2  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.steps= self.steps+1
+                self.get_logger().info(f"Next step 3333333333")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+                
+            else :
+                self.steering_command = -7  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                
+
+        elif self.steps == 3:
+            if self.rr > 100 and self.lr > 100 and self.ls < 80 and self.rs <80:
+                self.steering_command = 0  # 예시 조향 값 (7이
+                self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 0  # 예시 속도 값 (255가 최대
+                self.parking_completed = True
+                self.parking_time = self.get_clock().now()
+                self.steps = self.steps+1
+                self.get_logger().info(f"===============Finish!!==================")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+            elif self.rr > 100 and self.lr > 100:
+                self.steering_command = 0  # 예시 조향 값 (7이
+                self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 0  # 예시 속도 값 (255가 최대
+                self.parking_completed = True
+                self.parking_time = self.get_clock().now()
+                self.steps = self.steps+1
+                self.get_logger().info(f"===============Finish!!==================")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+
+            else : 
+                self.steering_command = -2  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = -90  # 예시 속도 값 (255가 최대 속도)
+
+            
+                
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
+
+    def go_out_line(self):
+        
+        # 이거 지워야 함
+        # if self.rs > 800 and self.ls > 800 and self.rr > 800 and self.lr > 800 and self.bc > 800 and self.bl > 800 and self.steps2 == 0: 
+        #     return
+        
+        if self.steps2 == 0:
+            if self.lr < 100 and self.rr < 100 :
+                self.steps2 = self.steps2 + 1        
+                self.get_logger().info(f"next11111111111111111")
+                self.get_logger().info(f"Updated -> LR:{self.lr}, RR:{self.rr}, LS:{self.ls}, RS:{self.rs}, BC:{self.bc}, BL:{self.bl}")
+                self.std_time = self.get_clock().now()
+
+            else :
+                self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                
+
+        elif self.steps2 == 1:
+            current_time = self.get_clock().now()
+            #self.get_logger().info(f"time {current_time-self.std_time}")
+            if (current_time-self.std_time > Duration(seconds=8.8)):
+                self.steering_command = 2  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 225  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 225  # 예시 속도 값 (255가 최대 속도)
+            elif (current_time-self.std_time > Duration(seconds=0.6)):
+                self.steering_command = 7  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+            else :
+                self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
+                self.left_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+                self.right_speed_command = 135  # 예시 속도 값 (255가 최대 속도)
+
+        motion_command_msg = MotionCommand()
+        motion_command_msg.steering = self.steering_command
+        motion_command_msg.left_speed = self.left_speed_command
+        motion_command_msg.right_speed = self.right_speed_command
+        self.publisher.publish(motion_command_msg)
+            
 
 
                 
@@ -298,111 +499,3 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 
-
-"""
-if self.parking_car_data.data == "R":
-    if self.backP == False and (self.rr < 100 or self.lr < 100 or self.ls < 100 or self.rs < 100):
-        self.get_logger().info("Parking process start")
-        self.backP = True
-
-    elif self.backP == False:
-        self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
-        self.left_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
-        self.right_speed_command = -135  # 예시 속도 값 (255가 최대 속도)
-
-        motion_command_msg = MotionCommand()
-        motion_command_msg.steering = self.steering_command
-        motion_command_msg.left_speed = self.left_speed_command
-        motion_command_msg.right_speed = self.right_speed_command
-        self.publisher.publish(motion_command_msg)
-    
-    elif self.backP == True:
-        if self.rr > 100 and self.lr > 100 and self.ls < 80 and self.rs <80:
-            self.get_logger().info("Parking process completed")
-            self.get_logger().info(f"Final Distances -> LR: {self.lr} RR: {self.rr} LS: {self.ls} RS: {self.rs}")
-            self.parking_completed = True
-            self.steering_command = 0  # 예시 조향 값 (7이
-            self.left_speed_command = 0  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = 0  # 예시 속도 값 (255가 최대
-            
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-            
-
-        elif self.lr > 60 and self.rr < 53 and self.ls < 80 and self.rs <80:
-            self.get_logger().info("case 1")
-            self.steering_command = -4  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-            
-        elif self.rr > 60 and self.lr < 53 and self.ls < 80 and self.rs <80:
-            self.get_logger().info("case 2")
-            self.steering_command = 4  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = PARKING_SPEED # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-
-
-        elif self.lr > 60 and self.rr < 60:
-            self.get_logger().info("case 3")
-            self.steering_command = -4  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-
-        elif self.rr > 60 and self.lr < 60:
-            self.get_logger().info("case 4")
-            self.steering_command = 4  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-
-        elif self.rr < 60 and self.lr < 60:
-            self.get_logger().info("case 5")
-            self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-
-        else :
-            self.get_logger().info("case 6")
-            self.steering_command = 0  # 예시 조향 값 (7이 최대 조향)
-            self.left_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            self.right_speed_command = PARKING_SPEED  # 예시 속도 값 (255가 최대 속도)
-            
-            motion_command_msg = MotionCommand()
-            motion_command_msg.steering = self.steering_command
-            motion_command_msg.left_speed = self.left_speed_command
-            motion_command_msg.right_speed = self.right_speed_command
-            self.publisher.publish(motion_command_msg)
-    
-"""

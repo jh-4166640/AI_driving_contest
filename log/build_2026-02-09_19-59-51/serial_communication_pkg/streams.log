@@ -1,0 +1,25 @@
+[3.955s] Invoking command in '/home/tu03/ros2_ws/src/serial_communication_pkg': PYTHONPATH=/home/tu03/ros2_ws/build/serial_communication_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/serial_communication_pkg build --build-base /home/tu03/ros2_ws/build/serial_communication_pkg/build install --record /home/tu03/ros2_ws/build/serial_communication_pkg/install.log --single-version-externally-managed install_data
+[6.076s] running egg_info
+[6.081s] writing ../../build/serial_communication_pkg/serial_communication_pkg.egg-info/PKG-INFO
+[6.082s] writing dependency_links to ../../build/serial_communication_pkg/serial_communication_pkg.egg-info/dependency_links.txt
+[6.083s] writing entry points to ../../build/serial_communication_pkg/serial_communication_pkg.egg-info/entry_points.txt
+[6.084s] writing requirements to ../../build/serial_communication_pkg/serial_communication_pkg.egg-info/requires.txt
+[6.085s] writing top-level names to ../../build/serial_communication_pkg/serial_communication_pkg.egg-info/top_level.txt
+[6.098s] reading manifest file '../../build/serial_communication_pkg/serial_communication_pkg.egg-info/SOURCES.txt'
+[6.105s] writing manifest file '../../build/serial_communication_pkg/serial_communication_pkg.egg-info/SOURCES.txt'
+[6.106s] running build
+[6.106s] running build_py
+[6.108s] copying serial_communication_pkg/serial_sender_node.py -> /home/tu03/ros2_ws/build/serial_communication_pkg/build/lib/serial_communication_pkg
+[6.111s] running install
+[6.113s] running install_lib
+[6.120s] copying /home/tu03/ros2_ws/build/serial_communication_pkg/build/lib/serial_communication_pkg/serial_sender_node.py -> /home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages/serial_communication_pkg
+[6.125s] byte-compiling /home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages/serial_communication_pkg/serial_sender_node.py to serial_sender_node.cpython-310.pyc
+[6.130s] running install_data
+[6.131s] running install_egg_info
+[6.144s] removing '/home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages/serial_communication_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[6.146s] Copying ../../build/serial_communication_pkg/serial_communication_pkg.egg-info to /home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages/serial_communication_pkg-0.0.0-py3.10.egg-info
+[6.153s] running install_scripts
+[6.302s] Installing parking_serial_sender_node script to /home/tu03/ros2_ws/install/serial_communication_pkg/lib/serial_communication_pkg
+[6.304s] Installing serial_sender_node script to /home/tu03/ros2_ws/install/serial_communication_pkg/lib/serial_communication_pkg
+[6.307s] writing list of installed files to '/home/tu03/ros2_ws/build/serial_communication_pkg/install.log'
+[6.446s] Invoked command in '/home/tu03/ros2_ws/src/serial_communication_pkg' returned '0': PYTHONPATH=/home/tu03/ros2_ws/build/serial_communication_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tu03/ros2_ws/install/serial_communication_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/serial_communication_pkg build --build-base /home/tu03/ros2_ws/build/serial_communication_pkg/build install --record /home/tu03/ros2_ws/build/serial_communication_pkg/install.log --single-version-externally-managed install_data

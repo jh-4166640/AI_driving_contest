@@ -104,17 +104,18 @@ class CarDetector(Node):
                 # 데이터가 불완전하게 들어올 경우를 대비한 예외 처리
                 pass
             if self.finded_parking == False:
-                if self.bl > 100 and self.bc < 100:
-                    parking_lot_info = String()
-                    parking_lot_info.data = "L"
-                    self.publisher.publish(parking_lot_info)
-
-                else :
+                if self.bl < 100 :
                     parking_lot_info = String()
                     parking_lot_info.data = "R"
+                    print("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
                     self.publisher.publish(parking_lot_info)
-                
-                self.get_logger().info(f"Detected parking lot on the RIGHT side! BC: {self.bc}, BL: {self.bl}")
+                else:
+                    parking_lot_info = String()
+                    parking_lot_info.data = "L"
+                    print("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
+                    self.publisher.publish(parking_lot_info)
+
+                self.get_logger().info(f"Detected side! BC: {self.bc}, BL: {self.bl}")
                 self.finded_parking = True
 
             
